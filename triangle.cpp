@@ -11,61 +11,38 @@
 using namespace qglviewer;
 using namespace std;
 
-Trianle::Trianle()
+Triangle::Triangle()
 {
-  setOX(1.0f);
-  setOY(1.2f);
-  setOZ(1.6f);
+  float first[3] = {0.0, 0.0, 0.0}; 
+  float second[3] = {0.0, 1.0, 0.0};
+  float third[3] = {1.0, 0.0, 0.0};
+
+  setFirst(first);
+  setSecond(second);
+  setThird(third);
+
 }
 
-void Trianle::draw() const
+void Triangle::draw() const
 {
   glColor3fv(material().diffuseColor());
  
-  glPushMatrix ( ) ;
+  glPushMatrix ( ) ; 
   {
   glMultMatrixd(frame_.matrix());
   
   glBegin(GL_TRIANGLES);
-    glVertex3f(2.0, 0.0, 2.0);
-    glVertex3f(2.0, 2.0, 0.0);
-    glVertex3f(-2.0, 2.0, 0.0);
+    glVertex3fv(first_);
+    glVertex3fv(second_);
+    glVertex3fv(third_);
   glEnd();
 
-
-
-
-  int nbFaces = 50;
-  float stepAngle = 2*M_PI/nbFaces;
-  float angle = 0.0;
-
-  // draw base :
-  // TO DO
-  glBegin(GL_TRIANGLE_FAN);
-    glVertex3f(0.0, 0.0, 0.0);
-    for (int i = 0; i <= nbFaces; i++) {
-      glVertex3f(radius_ * cos(angle), 0.0, radius_ * sin(angle));
-      angle += stepAngle;
-    }
-  glEnd();
-  
-  // draw apex :
-  // TO DO
-  angle = 0.0;
-  glBegin(GL_TRIANGLE_FAN);
-    glVertex3f(0.0, height_, 0.0);
-    for (int i = 0; i <= nbFaces; i++) {
-      glVertex3f(radius_ * cos(angle), 0.0, radius_ * sin(angle));
-      angle += stepAngle;
-    }
-  glEnd();
- 
   }
   glPopMatrix();
   
 }
 
-bool Trianle::intersect(const Ray& ray, Hit& hit) const
+bool Triangle::intersect(const Ray& ray, Hit& hit) const
 {
   float dist = FLT_MAX;
 

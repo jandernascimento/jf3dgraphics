@@ -48,6 +48,7 @@ SOURCES       = viewer.cpp \
 		sphere.cpp \
 		cylinder.cpp \
 		cone.cpp \
+		triangle.cpp \
 		material.cpp \
 		object.cpp \
 		scene.cpp \
@@ -61,6 +62,7 @@ OBJECTS       = viewer.o \
 		sphere.o \
 		cylinder.o \
 		cone.o \
+		triangle.o \
 		material.o \
 		object.o \
 		scene.o \
