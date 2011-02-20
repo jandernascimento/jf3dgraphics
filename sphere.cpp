@@ -6,7 +6,7 @@
 #include <cmath>
 #include <float.h>
 
-// jander use qglviewer namespace to avoid having to write qglviewer:: to use
+// oleg jander use qglviewer namespace to avoid having to write qglviewer:: to use
 // qglviewer-defined classes
 using namespace qglviewer;
 using namespace std;
