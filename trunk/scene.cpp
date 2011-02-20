@@ -39,7 +39,9 @@ void Scene::addObject(Object* o)
   _top_node = (Node *)o;
   
   // To avoid warning. -> erase once used
-  Q_UNUSED(o)
+  //Q_UNUSED(o)
+  //addObject(_top_node);
+
 }
 
 /* Load a file from a filename
