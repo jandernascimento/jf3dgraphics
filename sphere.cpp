@@ -119,5 +119,7 @@ void Sphere::initFromDOMElement(const QDomElement& e)
   int ntheta = e.attribute("ntheta", "10").toInt();
   int nphi = e.attribute("nphi", "10").toInt();
   init(radius, ntheta, nphi);
+
+  draw();
 }
 
