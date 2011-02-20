@@ -9,6 +9,7 @@
 #include "sphere.h"
 #include "cylinder.h"
 #include "cone.h"
+#include "triangle.h"
 
 using namespace std;
 using namespace qglviewer;
@@ -24,22 +25,21 @@ void Viewer::draw()
   
   Scene *myscene = new Scene();
   Node *mynode = new Node();
-
-  //myscene->loadFromFile(QString("troisSpheres.scn"));
- 
+  
   Sphere *mysph = new Sphere();
   mysph->setRadius(0.3f);
   Frame new_frame = Frame();
   new_frame.setPosition(0.0,2.0,0.0);
   mysph->setFrame(new_frame);
   mynode->addObject(mysph);
+  //mysph->draw();
   
-  Sphere *mysph2 = new Sphere();
-  mysph2->setRadius(0.8f);
+  
+  Triangle *mytr = new Triangle();
   Frame new_frame2 = Frame();
   new_frame2.setPosition(0.0,-1.0,0.0);
-  mysph2->setFrame(new_frame2);
-  mynode->addObject(mysph2);
+  mytr->setFrame(new_frame2);
+  mynode->addObject(mytr);
   
   Cone *mycone = new Cone();
   mycone->setRadius(0.3f);
@@ -47,14 +47,16 @@ void Viewer::draw()
   Frame new_frame3 = Frame();
   new_frame3.setPosition(0.0,0.0,2.0);
   mycone->setFrame(new_frame3);
-  mycone->draw();
+  //mycone->draw();
   
-myscene->addObject(mynode);
+
+  //mynode->draw();
+  //mysph->draw();
+  myscene->addObject(mynode);
   myscene->draw();
 
-  
 
-   
+  
 
   /*
   const float nbSteps = 200.0;
