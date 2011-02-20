@@ -9,7 +9,6 @@
 #include "sphere.h"
 #include "cylinder.h"
 #include "cone.h"
-#include "triangle.h"
 
 using namespace std;
 using namespace qglviewer;
@@ -21,41 +20,37 @@ Viewer::~Viewer()
 
 void Viewer::draw()
 {
-  // A FAIRE
-  
+
+  scene()->draw();
+
   Scene *myscene = new Scene();
   Node *mynode = new Node();
-  
+/*
   Sphere *mysph = new Sphere();
   mysph->setRadius(0.3f);
   Frame new_frame = Frame();
   new_frame.setPosition(0.0,2.0,0.0);
   mysph->setFrame(new_frame);
   mynode->addObject(mysph);
-  //mysph->draw();
   
-  
-  Triangle *mytr = new Triangle();
+  Sphere *mysph2 = new Sphere();
+  mysph2->setRadius(0.8f);
   Frame new_frame2 = Frame();
   new_frame2.setPosition(0.0,-1.0,0.0);
-  mytr->setFrame(new_frame2);
-  mynode->addObject(mytr);
-  
+  mysph2->setFrame(new_frame2);
+  mynode->addObject(mysph2);
+  */
   Cone *mycone = new Cone();
   mycone->setRadius(0.3f);
   mycone->setHeight(0.9f);
   Frame new_frame3 = Frame();
   new_frame3.setPosition(0.0,0.0,2.0);
   mycone->setFrame(new_frame3);
+  mynode->addObject(mycone);
   //mycone->draw();
   
-
-  //mynode->draw();
-  //mysph->draw();
   myscene->addObject(mynode);
   myscene->draw();
-
-
   
 
   /*
@@ -101,7 +96,7 @@ void Viewer::init()
   restoreStateFromFile();
 
   // Loads scene (prevents from pressing 'L' at each start).
-  loadScene("troisSpheres.scn");
+  //loadScene("troisSpheres.scn");
 
   // Set Camera to scene Camera. Set scene center and radius.
   initFromScene();
