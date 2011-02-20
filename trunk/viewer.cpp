@@ -24,15 +24,15 @@ void Viewer::draw()
   
   Scene *myscene = new Scene();
   Node *mynode = new Node();
-  
+
+  //myscene->loadFromFile(QString("troisSpheres.scn"));
+ 
   Sphere *mysph = new Sphere();
   mysph->setRadius(0.3f);
   Frame new_frame = Frame();
   new_frame.setPosition(0.0,2.0,0.0);
   mysph->setFrame(new_frame);
   mynode->addObject(mysph);
-  //mysph->draw();
-  
   
   Sphere *mysph2 = new Sphere();
   mysph2->setRadius(0.8f);
@@ -49,14 +49,12 @@ void Viewer::draw()
   mycone->setFrame(new_frame3);
   mycone->draw();
   
-
-  //mynode->draw();
-  //mysph->draw();
-  myscene->addObject(mynode);
+myscene->addObject(mynode);
   myscene->draw();
 
-
   
+
+   
 
   /*
   const float nbSteps = 200.0;
