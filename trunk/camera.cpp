@@ -82,9 +82,11 @@ Ray Camera::getPixelRay(float x, float y) const
   int xres=xResolution_;
   int yres=yResolution_;
 
-  qglviewer::Vec direction=qglviewer::Vec(x,y,0);
+  float fovdistance=(yres/2)/tan(fov/2);
+
+  qglviewer::Vec direction=qglviewer::Vec(x,y,y/tan(fov/2));
   
-  qglviewer::Vec start=qglviewer::Vec(xres/2,yres/2,y/tan(fov));
+  qglviewer::Vec start=qglviewer::Vec(xres/2,yres/2,0);
 
   return Ray(start,direction);
 
