@@ -77,6 +77,9 @@ void Camera::draw(float radius) const
 Ray Camera::getPixelRay(float x, float y) const
 {
   // A FAIRE
+  float fov=fielfOfView_;
+  int xres=xResolution_;
+  int yres=yResolution_;
 
   // to remove "unused parameter" warnings - to be removed
   Q_UNUSED(x)
