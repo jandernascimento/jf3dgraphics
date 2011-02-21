@@ -28,6 +28,7 @@ void Scene::draw() const
 {
   // TODO
   _top_node->draw();
+  camera().drawAllRays();
 }
 
 /* Add an change the top node
