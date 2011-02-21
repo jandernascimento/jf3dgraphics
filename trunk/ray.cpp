@@ -28,5 +28,12 @@ void Ray::setDirection(const Vec& direction)
 
 void Ray::draw() const
 {
-  // A FAIRE
+  
+	glBegin(GL_LINES);
+
+	glVertex3f(direction_.x, direction_.y,direction_.z);
+	glVertex3f(start_.x, start_.y,start_.z);
+
+	glEnd();
+
 }

@@ -1,5 +1,6 @@
 #include "camera.h"
 #include "scene.h"
+#include "math.h"
 #include <qmessagebox.h>
 
 Camera::Camera()
@@ -77,15 +78,21 @@ void Camera::draw(float radius) const
 Ray Camera::getPixelRay(float x, float y) const
 {
   // A FAIRE
-  float fov=fielfOfView_;
+  float fov=fieldOfView_;
   int xres=xResolution_;
   int yres=yResolution_;
 
-  // to remove "unused parameter" warnings - to be removed
-  Q_UNUSED(x)
-  Q_UNUSED(y)
+  qglviewer::Vec direction=qglviewer::Vec(x,y,0);
+  
+  qglviewer::Vec start=qglviewer::Vec(xres/2,yres/2,y/tan(fov));
 
-  return Ray();
+  return Ray(start,direction);
+
+  // to remove "unused parameter" warnings - to be removed
+  //Q_UNUSED(x)
+  //Q_UNUSED(y)
+
+  //return Ray();
 }
 
 void Camera::drawAllRays() const
