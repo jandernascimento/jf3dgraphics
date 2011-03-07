@@ -79,14 +79,27 @@ Ray Camera::getPixelRay(float x, float y) const
 {
   // A FAIRE
   float fov=fieldOfView_;
-  int xres=xResolution_;
-  int yres=yResolution_;
+  float xresdiv2=(float)xResolution_/2;
+  float yresdiv2=(float)yResolution_/2;
 
-  float fovdistance=(yres/2)/tan(fov/2);
+  float fovdistance=(yresdiv2)/tan(fov/2);
 
-  qglviewer::Vec direction=qglviewer::Vec(x,y,y/tan(fov/2));
+  const qglviewer::Vec go=qglviewer::Vec(xresdiv2,yresdiv2,fovdistance);
+  const qglviewer::Vec go0=qglviewer::Vec(0,0,0);
+  //frame_.setTranslation(go);
   
-  qglviewer::Vec start=qglviewer::Vec(xres/2,yres/2,0);
+  float xp = xresdiv2 - x;
+  float yp = yresdiv2 - y;
+  
+  const qglviewer::Vec distance_ = qglviewer::Vec(xp,yp,-1*fovdistance);
+  const qglviewer::Vec distance_in_world = frame_.inverseCoordinatesOf(distance_);
+  
+  qglviewer::Vec start=go0;
+  qglviewer::Vec direction=distance_in_world; 
+  
+  direction.normalize();
+  direction = frame_.inverseTransformOf(direction);
+  start = frame_.inverseCoordinatesOf(start);
 
   return Ray(start,direction);
 

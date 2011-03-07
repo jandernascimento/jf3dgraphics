@@ -38,7 +38,7 @@
   </Frame>
  </Sphere>
 
- <Camera fieldOfView="0.7854" xResolution="400" yResolution="400">
+ <Camera fieldOfView="0.7854" xResolution="4" yResolution="3">
   <Frame>
    <position x="1.26238" y="-1.63493" z="0.557532" />
    <orientation q0="-0.623147" q1="-0.270643" q2="-0.246995" q3="-0.690966" />
