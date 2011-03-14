@@ -23,8 +23,8 @@ void Viewer::draw()
 
   scene()->draw();
 
-  Scene *myscene = new Scene();
-  Node *mynode = new Node();
+//  Scene *myscene = new Scene();
+//  Node *mynode = new Node();
 /*
   Sphere *mysph = new Sphere();
   mysph->setRadius(0.3f);
@@ -39,7 +39,8 @@ void Viewer::draw()
   new_frame2.setPosition(0.0,-1.0,0.0);
   mysph2->setFrame(new_frame2);
   mynode->addObject(mysph2);
-  */
+  
+  
   Cone *mycone = new Cone();
   mycone->setRadius(0.3f);
   mycone->setHeight(0.9f);
@@ -48,9 +49,9 @@ void Viewer::draw()
   mycone->setFrame(new_frame3);
   mynode->addObject(mycone);
   //mycone->draw();
-  
-  myscene->addObject(mynode);
-  myscene->draw();
+  */
+ // myscene->addObject(mynode);
+ // myscene->draw();
   
 
   /*
@@ -98,7 +99,7 @@ void Viewer::init()
   // Loads scene (prevents from pressing 'L' at each start).
   //loadScene("troisSpheres.scn");
 
-  // Set Camera to scene Camera. Set scene center and radius.
+// Set Camera to scene Camera. Set scene center and radius.
   initFromScene();
 }
 

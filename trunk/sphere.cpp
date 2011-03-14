@@ -40,7 +40,8 @@ glMultMatrixd(frame_.matrix());
   GLUquadricObj *quadratic;
   quadratic = gluNewQuadric();
   
-  glColor3fv(material().diffuseColor());
+  glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+glColor3fv(material().diffuseColor());
   gluSphere(quadratic,radius_,50,50);
 /*
   glColor3fv(material().diffuseColor());
