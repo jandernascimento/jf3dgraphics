@@ -27,7 +27,15 @@ Scene::~Scene()
 void Scene::draw() const
 {
   // TODO
+  
   _top_node->draw();
+  
+  //std::list<const Object*>::const_iterator iter;
+
+  //for (iter = _leaves.begin(); iter != _leaves.end(); ++iter) {
+    //(*iter)->draw();
+  //}
+
   camera().drawAllRays();
 }
 
@@ -37,12 +45,12 @@ void Scene::addObject(Object* o)
 {
   // TODO
   
-  _top_node = (Node *)o;
+  _top_node->addObject(o);
   
   // To avoid warning. -> erase once used
   //Q_UNUSED(o)
+  //_leaves.push_back(_top_node);
   //addObject(_top_node);
-
 }
 
 /* Load a file from a filename
@@ -51,8 +59,8 @@ void Scene::loadFromFile(const QString& filename)
 {
   QDomDocument doc;
   QFile file(filename);
-  //if (!file.open(QIODevice::ReadOnly))
-    //return;
+  if (!file.open(QIODevice::ReadOnly))
+    return;
   if (!doc.setContent(&file)) {
     file.close();
     return;
