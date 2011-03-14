@@ -40,7 +40,8 @@ glMultMatrixd(frame_.matrix());
   GLUquadricObj *quadratic;
   quadratic = gluNewQuadric();
   
-  glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+  //draw the objects without lines
+  //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 glColor3fv(material().diffuseColor());
   gluSphere(quadratic,radius_,50,50);
 /*

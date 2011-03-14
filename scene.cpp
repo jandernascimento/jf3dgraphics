@@ -43,7 +43,7 @@ void Scene::draw() const
  */
 void Scene::addObject(Object* o)
 {
-  // TODO
+  // TODO: done by the teacher
   
   _top_node->addObject(o);
   
