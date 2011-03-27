@@ -8,3 +8,6 @@ SOURCES  = viewer.cpp sphere.cpp material.cpp object.cpp scene.cpp ray.cpp camer
 # Qt 2.3 users must edit config.pri
 #include( config.pri )
 LIBS *= -lqglviewer -lglut
+
+QT += qt3support 
+
