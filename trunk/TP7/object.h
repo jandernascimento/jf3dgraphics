@@ -16,6 +16,10 @@ class Object
 public :
   virtual ~Object() {};
   
+  typedef std::pair<float, qglviewer::Frame> KeyFrame;
+
+  std::list<KeyFrame> keyframe_;
+  
   // Accesseurs
   //
   const Material& material() const { return material_; }
@@ -29,6 +33,7 @@ public :
   // Affichage openGL de l'objet
   //
   virtual void draw() const = 0;
+  virtual void animate(float time);
 
   // Rayon d'une sphère englobante (meme grossiere).
   //

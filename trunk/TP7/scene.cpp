@@ -34,6 +34,11 @@ void Scene::draw() const
 	_top_node->draw();
 }
 
+void Scene::animate() const
+{
+  _top_node->animate();
+}
+
 void Scene::addObject(Object* o)
 {
 	_top_node->addObject(o);

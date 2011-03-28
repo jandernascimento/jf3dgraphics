@@ -34,6 +34,8 @@
         <position x="0.0" y="0.0" z="1.4"/>
         <orientation q0="0.5" q1="0" q2="0" q3="0.866" />
       </Frame>
+      <AxisAngleKeyFrame x="1.0" y="0.0" z="0.0" angle="0.5" time="100"
+        />
       
       <Sphere radius="0.25">
         <Material>
