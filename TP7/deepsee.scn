@@ -67,7 +67,7 @@
       </Material>
       <Frame>
         <position x="0.0" y="-0.3" z="0.0"/>
-        <orientation q0="1.5" q1="0.0" q2="0.0" q3="0.866"/>
+        <orientation q0="0.9239" q1="0.0" q2="0.0" q3="0.3829"/>
       </Frame>
     </Cylinder>
  
@@ -80,7 +80,7 @@
       </Material>
       <Frame>
         <position x="0.0" y="0.3" z="0.0"/>
-        <orientation q0="-1.5" q1="0.0" q2="0.0" q3="0.866"/>
+        <orientation q0="-0.9239" q1="0.0" q2="0.0" q3="0.3829"/>
       </Frame>
     </Cylinder>
 

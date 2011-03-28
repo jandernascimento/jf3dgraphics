@@ -28,6 +28,17 @@ void Object::initFromDOMElement(const QDomElement& e)
 					o.normalize();
 					frame_.setOrientation(o);
 			}
+      else if (e.tagName() == "AxisAngleKeyFrame")
+      {
+        qglviewer::Frame frame=frame_;
+        qglviewer::Vec axis;
+        axis.initFromDOMElement(e);
+        float angle=e.attribute("angle","0.0").toFloat();
+        qglviewer::Quaternion animQuat;
+        animQuat.setAxisAngle(axis, angle);
+        frame.rotate(animQuat);
+        keyframe_.push_back(KeyFrame(e.attribute("time","0.0").toFloat(),frame));
+      }
 		}
 		else
 			QMessageBox::warning(NULL, "Object XML error", "Error while parsing Object XML document");
@@ -59,4 +70,12 @@ Frame Object::MultiplyFrame(const Frame& f1, const Frame& f2) const
 	Frame f;
 	f.setFromMatrix(matrix);
 	return f;
+}
+
+void Object::animate(float time)
+{
+  
+  //objects in _keyframe are two objects
+  //set the attribute _frame as the interpolations
+  
 }

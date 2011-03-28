@@ -22,6 +22,7 @@ public:
 
 protected :
   virtual void draw();
+  virtual void animate();
   virtual void init();
   virtual QString helpString() const;
   virtual void keyPressEvent(QKeyEvent *e);
@@ -38,6 +39,7 @@ private:
   Ray _ray;
   qglviewer::Vec _hit_pos;
   bool _selection;
+  float time;
 };
 
 #endif // VIEWER_H

@@ -38,9 +38,16 @@ void Viewer::draw()
 	}
 }
 
+void Viewer::animate()
+{
+  time++;
+  scene->animate(time);
+}
 
 void Viewer::init()
 {
+  time = 0;
+
   // Key description for help window (press 'H')
   setKeyDescription(Qt::Key_L, "Loads a new scene");
   setKeyDescription(Qt::Key_S, "Shoot rays in the scene and saves the result");

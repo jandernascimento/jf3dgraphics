@@ -59,6 +59,27 @@ void Node::draw() const
 	glPopMatrix();
 }
 
+void Node::animate(float time) const 
+{
+	// Apply the transform
+	glMatrixMode(GL_MODELVIEW);
+	glPushMatrix();
+	glMultMatrixd(frame_.matrix());
+  
+  Object::animate(time);
+
+	// Display the leaves of this node
+	std::list<const Object*>::const_iterator iter = _leaves.begin();
+	for(; iter != _leaves.end(); iter++)
+	{
+		(*iter)->animate(time);
+	}
+	
+	// Go back to the father's frame
+	glPopMatrix();
+}
+
+
 /* Radius of the scene node
  * We use radius caching to speed up things
  */

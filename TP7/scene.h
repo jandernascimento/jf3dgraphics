@@ -17,6 +17,7 @@ class Scene
 		Scene() ;
 		~Scene() ;
 		void draw() const;
+		void animate(float time) const;
 		void addObject(Object* o);
 		void loadFromFile(const QString& filename);
 
