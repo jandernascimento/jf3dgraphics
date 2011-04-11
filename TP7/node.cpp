@@ -59,7 +59,7 @@ void Node::draw() const
 	glPopMatrix();
 }
 
-void Node::animate(float time) const 
+void Node::animate(float time)
 {
 	// Apply the transform
 	glMatrixMode(GL_MODELVIEW);

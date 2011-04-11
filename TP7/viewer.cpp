@@ -8,10 +8,19 @@
 #include <QKeyEvent>
 #endif
 #include <math.h>
-#include <GL/glut.h>
 
 using namespace std;
 using namespace qglviewer;
+
+Viewer* Viewer::getViewer()
+{
+	static Viewer* _instance = NULL;
+
+	if(_instance == NULL)
+		_instance = new Viewer();
+
+	return _instance;
+}
 
 Viewer::~Viewer()
 {
@@ -38,16 +47,9 @@ void Viewer::draw()
 	}
 }
 
-void Viewer::animate()
-{
-  time++;
-  scene->animate(time);
-}
 
 void Viewer::init()
 {
-  time = 0;
-
   // Key description for help window (press 'H')
   setKeyDescription(Qt::Key_L, "Loads a new scene");
   setKeyDescription(Qt::Key_S, "Shoot rays in the scene and saves the result");
@@ -60,12 +62,6 @@ void Viewer::init()
 	// Ray viewing disabled at first
 	_selection = false;
 
-  //// Init openGL
-#ifndef WIN32
-  int i=0;
-  glutInit(&i, NULL);
-#endif
-
   // So that transparent materials are correctly displayed.
   // Disable if rendering is too slow.
   glEnable(GL_BLEND);
@@ -77,10 +73,13 @@ void Viewer::init()
   // Loads scene (prevents from pressing 'L' at each start).
   //loadScene("troisSpheres.scn");
   //loadScene("cylindres.scn");
-  loadScene("arm.scn");
+  //loadScene("arm.scn");
+  loadScene("dynamics.scn");
 
   // Set Camera to scene Camera. Set scene center and radius.
   initFromScene();
+
+  time = 0;
 }
 
 QString Viewer::helpString() const
@@ -94,54 +93,92 @@ QString Viewer::helpString() const
 
 void Viewer::keyPressEvent(QKeyEvent *e)
 {
-  switch (e->key())
-    {
-    case Qt::Key_L :
-#if QT_VERSION < 0x040000
-      loadScene(QFileDialog::getOpenFileName("", "Scenes (*.scn);;All files (*)", this));
-#else
-      loadScene(QFileDialog::getOpenFileName(this, "Select a scene", ".", "Scenes (*.scn);;All files (*)"));
-#endif
-      break;
-    case Qt::Key_S :
-#if QT_VERSION < 0x040000
-      if ((e->state() == Qt::NoButton) || (e->state() == Qt::ShiftButton))
-#else
-      if ((e->modifiers() == Qt::NoModifier) || (e->modifiers() == Qt::ShiftModifier))
-#endif	
+	switch (e->key())
 	{
+		case Qt::Key_L :
 #if QT_VERSION < 0x040000
-	  if (e->state() == Qt::ShiftButton)
+			loadScene(QFileDialog::getOpenFileName("", "Scenes (*.scn);;All files (*)", this));
 #else
-	  if (e->modifiers() == Qt::ShiftModifier)
+			loadScene(QFileDialog::getOpenFileName(this, "Select a scene", ".", "Scenes (*.scn);;All files (*)"));
 #endif
-	    {
-	      // Shift+S renders image from current view point
-	      scene()->camera().frame().setPosition(camera()->position());
-	      scene()->camera().frame().setOrientation(camera()->orientation());
-	    }
-	  
-	  rayTracer().renderImage();
-	  // Remplacer cette ligne par : const QString name = "result.jpg";
-	  // pour ne pas avoir à choisir un nom à chaque fois.
-	  const QString name = QFileDialog::getSaveFileName();
-	  rayTracer().saveImage(name);
-	  
+			break;
+		case Qt::Key_S :
 #if QT_VERSION < 0x040000
-	  if ((e->state() == Qt::ShiftButton) && (camera()->keyFrameInterpolator(1)))
+			if ((e->state() == Qt::NoButton) || (e->state() == Qt::ShiftButton))
 #else
-	  if ((e->modifiers() == Qt::ShiftModifier) && (camera()->keyFrameInterpolator(1)))
+				if ((e->modifiers() == Qt::NoModifier) || (e->modifiers() == Qt::ShiftModifier))
+#endif	
+				{
+#if QT_VERSION < 0x040000
+					if (e->state() == Qt::ShiftButton)
+#else
+						if (e->modifiers() == Qt::ShiftModifier)
 #endif
-	    {
-	      // Restore initial scene camera
-	      scene()->camera().frame().setPosition(camera()->keyFrameInterpolator(1)->keyFrame(0).position());
-	      scene()->camera().frame().setOrientation(camera()->keyFrameInterpolator(1)->keyFrame(0).orientation());
-	    }
-	  break;
+						{
+							// Shift+S renders image from current view point
+							scene()->camera().frame().setPosition(camera()->position());
+							scene()->camera().frame().setOrientation(camera()->orientation());
+						}
+
+					rayTracer().cleanImageList();
+					rayTracer().renderImage();
+					// Remplacer cette ligne par : const QString name = "result.jpg";
+					// pour ne pas avoir à choisir un nom à chaque fois.
+					const QString name = QFileDialog::getSaveFileName();
+					rayTracer().saveImage(name);
+
+#if QT_VERSION < 0x040000
+					if ((e->state() == Qt::ShiftButton) && (camera()->keyFrameInterpolator(1)))
+#else
+						if ((e->modifiers() == Qt::ShiftModifier) && (camera()->keyFrameInterpolator(1)))
+#endif
+						{
+							// Restore initial scene camera
+							scene()->camera().frame().setPosition(camera()->keyFrameInterpolator(1)->keyFrame(0).position());
+							scene()->camera().frame().setOrientation(camera()->keyFrameInterpolator(1)->keyFrame(0).orientation());
+						}
+					break;
+				}
+		case Qt::Key_A :
+#if QT_VERSION < 0x040000
+			if ((e->state() == Qt::NoButton) || (e->state() == Qt::ShiftButton))
+#else
+				if ((e->modifiers() == Qt::NoModifier) || (e->modifiers() == Qt::ShiftModifier))
+#endif	
+				{
+#if QT_VERSION < 0x040000
+					if (e->state() == Qt::ShiftButton)
+#else
+						if (e->modifiers() == Qt::ShiftModifier)
+#endif
+						{
+							// Shift+S renders image from current view point
+							scene()->camera().frame().setPosition(camera()->position());
+							scene()->camera().frame().setOrientation(camera()->orientation());
+						}
+
+					rayTracer().cleanImageList();
+					rayTracer().renderAnimation(0, 100);
+					// Remplacer cette ligne par : const QString name = "result.jpg";
+					// pour ne pas avoir à choisir un nom à chaque fois.
+					const QString name = QFileDialog::getSaveFileName();
+					rayTracer().saveAnimation(name);
+
+#if QT_VERSION < 0x040000
+					if ((e->state() == Qt::ShiftButton) && (camera()->keyFrameInterpolator(1)))
+#else
+						if ((e->modifiers() == Qt::ShiftModifier) && (camera()->keyFrameInterpolator(1)))
+#endif
+						{
+							// Restore initial scene camera
+							scene()->camera().frame().setPosition(camera()->keyFrameInterpolator(1)->keyFrame(0).position());
+							scene()->camera().frame().setOrientation(camera()->keyFrameInterpolator(1)->keyFrame(0).orientation());
+						}
+					break;
+				}
+		default :
+			QGLViewer::keyPressEvent(e);
 	}
-    default :
-      QGLViewer::keyPressEvent(e);
-    }
 }
 
 void Viewer::loadScene(const QString& name)
@@ -195,4 +232,10 @@ void Viewer::select(const QPoint& point)
 	}
 
 	_selection = true;
+}
+
+void Viewer::animate() {
+	// Time management
+	time++;
+	scene()->animate(time);
 }

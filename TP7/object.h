@@ -16,8 +16,10 @@ class Object
 public :
   virtual ~Object() {};
   
+  //type for key Frames, a pair of <time, Frame>
   typedef std::pair<float, qglviewer::Frame> KeyFrame;
 
+  //key frame smart array
   std::list<KeyFrame> keyframe_;
   
   // Accesseurs
