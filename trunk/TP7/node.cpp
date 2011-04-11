@@ -23,7 +23,7 @@ Node::Node() : is_constant(false)
  */
 Node::~Node()
 {
-	std::list<const Object*>::const_iterator iter = _leaves.begin();
+	std::list<Object*>::const_iterator iter = _leaves.begin();
 	for(; iter != _leaves.end(); )
 	{
 		delete (*iter++);
@@ -32,7 +32,7 @@ Node::~Node()
 
 /* Add a node in the current tree
  */
-void Node::addObject(const Object* node) 
+void Node::addObject(Object* node) 
 {
 	_leaves.push_back(node);
 	is_constant = false;
@@ -49,7 +49,7 @@ void Node::draw() const
 	glMultMatrixd(frame_.matrix());
 
 	// Display the leaves of this node
-	std::list<const Object*>::const_iterator iter = _leaves.begin();
+	std::list<Object*>::const_iterator iter = _leaves.begin();
 	for(; iter != _leaves.end(); iter++)
 	{
 		(*iter)->draw();
@@ -69,7 +69,7 @@ void Node::animate(float time)
   Object::animate(time);
 
 	// Display the leaves of this node
-	std::list<const Object*>::const_iterator iter = _leaves.begin();
+	std::list<Object*>::iterator iter = _leaves.begin();
 	for(; iter != _leaves.end(); iter++)
 	{
 		(*iter)->animate(time);
@@ -89,7 +89,7 @@ float Node::boundingRadius() const
 
 	if(!is_constant)
 	{
-		std::list<const Object*>::const_iterator iter = _leaves.begin();
+		std::list<Object*>::const_iterator iter = _leaves.begin();
 		for(; iter != _leaves.end(); iter++)
 		{
 			radius = fmax(radius, (*iter)->boundingRadius() + (*iter)->frame().translation().norm());
@@ -111,7 +111,7 @@ bool Node::intersect(const Ray& ray, Hit& min_dist_hit, Frame frame) const
 
 	Ray new_ray(frame_.coordinatesOf(ray.start()), frame_.transformOf(ray.direction()));
 
-	std::list<const Object*>::const_iterator iter = _leaves.begin();
+	std::list<Object*>::const_iterator iter = _leaves.begin();
 	for(; iter != _leaves.end(); iter++)
 	{
 		Hit hit;
