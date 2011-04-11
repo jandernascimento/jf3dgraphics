@@ -15,7 +15,7 @@ class Node : public Object
 		// Add a leave to the current node
 		// We force the node to be non modifiable
 		//
-		void addObject(const Object* node) ;
+		void addObject(Object* node) ;
 
 		// Affichage openGL de l'objet
 		//
@@ -37,7 +37,7 @@ class Node : public Object
 	protected:
 		// Data
 		//
-		std::list<const Object*> _leaves;
+		std::list<Object*> _leaves;
 
 		// Has the node been modified ?
 		// Needed for the bounding radius caching
