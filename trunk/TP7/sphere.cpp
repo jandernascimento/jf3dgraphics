@@ -26,7 +26,7 @@ void Sphere::draw() const
 	// Apply the transform
 	glMatrixMode(GL_MODELVIEW);
 	glPushMatrix();
-	glMultMatrixd(frame_.matrix());
+	glMultMatrixd(frame_.worldMatrix());
 
 	// Color of the sphere
 	glColor3fv(material().diffuseColor());

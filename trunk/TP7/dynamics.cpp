@@ -26,7 +26,6 @@ void Dynamics::draw() const
 	glMatrixMode(GL_MODELVIEW);
 	glPushMatrix();
 	glMultMatrixd(frame_.matrix());
-	glMultMatrixd(_manipulated_frame.matrix());
 
 	// draw spring elements
 	int nbSprings = getNbSprings();
@@ -42,6 +41,7 @@ void Dynamics::draw() const
 		glVertex3f(pos2.x, pos2.y, pos2.z);
 	}		
 	glEnd();
+	glMultMatrixd(_manipulated_frame.matrix());
 	QGLViewer::drawAxis();
 
 	// Go back to the father's frame
