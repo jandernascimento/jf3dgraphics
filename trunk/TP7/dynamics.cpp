@@ -181,7 +181,7 @@ void Dynamics::animate(float t)
 	// Integration scheme :
 
 	// first ball is updated from manipulated frame
-	positions[0]=child(0)->frame().position();
+	positions[0]=_leaves.front()->frame().position();
 
 	// other balls follow the Newton law:
 	for(unsigned int i=1; i<nbBalls; ++i ) {
