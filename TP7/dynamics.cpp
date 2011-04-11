@@ -96,6 +96,8 @@ void Dynamics::initFromDOMElement(const QDomElement& e)
 	t2->setMaterial(mat);
 
 	addObject(t1); addObject(t2);
+  
+  addSpring(0, 1, 15, 3, 4);
 }
 
 /////////////////////////
@@ -176,6 +178,10 @@ void Dynamics::animate(float t)
 	///////////////////////////
 	// TODO: question 1: compute velocities
 
+	for(unsigned int i=0; i<nbBalls; ++i ) {
+			// accelerations are stored in the forces
+			velocities[i] = velocities[i] + dt * forces[i];
+	}
 
 	///////////////////////
 	// Integration scheme :

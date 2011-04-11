@@ -33,6 +33,8 @@ DESTDIR	Makefile	/^DESTDIR  = $/;"	m
 DIST	Makefile	/^DIST	   = rt.pro$/;"	m
 DirectionalLight	light.cpp	/^DirectionalLight::DirectionalLight()$/;"	f	class:DirectionalLight
 DirectionalLight	light.h	/^class DirectionalLight : public Light$/;"	c
+Dynamics	dynamics.h	/^		Dynamics()$/;"	f	class:Dynamics
+Dynamics	dynamics.h	/^class Dynamics : public Node $/;"	c
 FORMS	Makefile	/^FORMS = $/;"	m
 GZIP	Makefile	/^GZIP     = gzip -9f$/;"	m
 HEADERS	Makefile	/^HEADERS = viewer.h \\$/;"	m
@@ -84,6 +86,8 @@ Scene	scene.cpp	/^Scene::Scene()$/;"	f	class:Scene
 Scene	scene.h	/^class Scene$/;"	c
 Sphere	sphere.cpp	/^Sphere::Sphere()$/;"	f	class:Sphere
 Sphere	sphere.h	/^class Sphere : public Object$/;"	c
+Spring	spring.cpp	/^Spring::Spring(unsigned int o1, unsigned int o2, float s, float l, float d) $/;"	f	class:Spring
+Spring	spring.h	/^class Spring $/;"	c
 TAR	Makefile	/^TAR      = tar -cf$/;"	m
 TARGET	Makefile	/^TARGET   = rt$/;"	m
 TextureMode	material.h	/^  enum TextureMode { MODULATE, BLEND, REPLACE };$/;"	g	class:Material
@@ -97,19 +101,25 @@ VIEWER_H	viewer.h	2;"	d
 Viewer	viewer.h	/^class Viewer : public QGLViewer$/;"	c
 YACC	Makefile	/^YACC     = yacc$/;"	m
 YACCFLAGS	Makefile	/^YACCFLAGS= -d$/;"	m
+_SPRING_H_	spring.h	2;"	d
 _hit_pos	viewer.h	/^  qglviewer::Vec _hit_pos;$/;"	m	class:Viewer
-_leaves	node.h	/^		std::list<const Object*> _leaves;$/;"	m	class:Node
+_leaves	node.h	/^		std::list<Object*> _leaves;$/;"	m	class:Node
 _lights	scene.h	/^		std::vector<const Light*> _lights;$/;"	m	class:Scene
+_manipulated_frame	dynamics.h	/^		qglviewer::ManipulatedFrame _manipulated_frame;$/;"	m	class:Dynamics
 _ray	viewer.h	/^  Ray _ray;$/;"	m	class:Viewer
 _selection	viewer.h	/^  bool _selection;$/;"	m	class:Viewer
 _top_node	scene.h	/^		Node* _top_node;$/;"	m	class:Scene
+addBall	dynamics.cpp	/^unsigned int Dynamics::addBall(const Vec& ballPos, const Vec& velocity, float mass, float radius)$/;"	f	class:Dynamics
+addForce	spring.cpp	/^void Spring::addForce( vector<Vec>& forces, const vector<Vec>& pos, const vector<Vec>& vel)$/;"	f	class:Spring
 addLight	scene.cpp	/^void Scene::addLight(const Light* light)$/;"	f	class:Scene
-addObject	node.cpp	/^void Node::addObject(const Object* node) $/;"	f	class:Node
+addObject	node.cpp	/^void Node::addObject(Object* node) $/;"	f	class:Node
 addObject	scene.cpp	/^void Scene::addObject(Object* o)$/;"	f	class:Scene
-animate	node.cpp	/^void Node::animate(float time) const $/;"	f	class:Node
+addSpring	dynamics.cpp	/^unsigned int Dynamics::addSpring(unsigned int ball1, unsigned  int ball2, float stiffness, float initLength, float dampingFactor)$/;"	f	class:Dynamics
+animate	dynamics.cpp	/^void Dynamics::animate(float t)$/;"	f	class:Dynamics
+animate	node.cpp	/^void Node::animate(float time)$/;"	f	class:Node
 animate	object.cpp	/^void Object::animate(float time)$/;"	f	class:Object
-animate	scene.cpp	/^void Scene::animate() const$/;"	f	class:Scene
-animate	viewer.cpp	/^void Viewer::animate()$/;"	f	class:Viewer
+animate	scene.cpp	/^void Scene::animate(float a) $/;"	f	class:Scene
+animate	viewer.cpp	/^void Viewer::animate() {$/;"	f	class:Viewer
 antialiasing_	rayTracer.h	/^  int antialiasing_;$/;"	m	class:RayTracer
 b	color.h	/^  float r, g, b;$/;"	m	class:Color
 bottomRadius	cylinder.h	/^	float bottomRadius() const { return bottomRadius_; }$/;"	f	class:Cylinder
@@ -123,10 +133,15 @@ camera	scene.h	/^		const Camera& camera() const { return camera_; }$/;"	f	class:
 camera_	scene.h	/^		Camera camera_;$/;"	m	class:Scene
 center	scene.cpp	/^Vec Scene::center() const$/;"	f	class:Scene
 clamp	color.h	/^  void clamp()$/;"	f	class:Color
+cleanImageList	rayTracer.h	/^  void cleanImageList() const { images_.clear(); } ;$/;"	f	class:RayTracer
+collisionBallBall	dynamics.cpp	/^void Dynamics::collisionBallBall(Vec& x1, Vec& v1, float r1, float invm1,$/;"	f	class:Dynamics
+collisionBallPlane	dynamics.cpp	/^void Dynamics::collisionBallPlane(Vec& x1, Vec& v1, float r1, float invm1,$/;"	f	class:Dynamics
 color	light.h	/^		Color color() const { return color_; }$/;"	f	class:Light
 color_	light.h	/^		Color color_;$/;"	m	class:Light
 computeNormal	cylinder.cpp	/^qglviewer::Vec Cylinder::computeNormal(qglviewer::Vec pt) const {$/;"	f	class:Cylinder
 current_frame_	ray.h	/^  qglviewer::Frame current_frame_;$/;"	m	class:Ray
+damping	dynamics.cpp	/^float damping = 0.2f;$/;"	v
+damping	spring.h	/^	float damping;  \/\/ damping factor	$/;"	m	class:Spring
 diffuseColor	material.cpp	/^Color Material::diffuseColor(float u, float v) const$/;"	f	class:Material
 diffuseColor	material.h	/^  Color diffuseColor() const { return diffuseColor_; }$/;"	f	class:Material
 diffuseColor_	material.h	/^  Color diffuseColor_, specularColor_, reflectiveColor_;$/;"	m	class:Material
@@ -136,6 +151,7 @@ direction_	light.h	/^		qglviewer::Vec direction_;$/;"	m	class:DirectionalLight
 direction_	ray.h	/^  qglviewer::Vec start_, direction_;$/;"	m	class:Ray
 draw	camera.cpp	/^void Camera::draw(float radius) const$/;"	f	class:Camera
 draw	cylinder.cpp	/^void Cylinder::draw() const$/;"	f	class:Cylinder
+draw	dynamics.cpp	/^void Dynamics::draw() const$/;"	f	class:Dynamics
 draw	node.cpp	/^void Node::draw() const $/;"	f	class:Node
 draw	ray.cpp	/^void Ray::draw() const$/;"	f	class:Ray
 draw	scene.cpp	/^void Scene::draw() const$/;"	f	class:Scene
@@ -143,9 +159,11 @@ draw	sphere.cpp	/^void Sphere::draw() const$/;"	f	class:Sphere
 draw	triangle.cpp	/^void Triangle::draw() const$/;"	f	class:Triangle
 draw	viewer.cpp	/^void Viewer::draw()$/;"	f	class:Viewer
 drawAllRays	camera.cpp	/^void Camera::drawAllRays() const$/;"	f	class:Camera
+drawing_sphere	dynamics.h	/^  		std::vector<Object*> drawing_sphere;$/;"	m	class:Dynamics
+dt	dynamics.h	/^                float dt;$/;"	m	class:Dynamics
 fieldOfView	camera.h	/^  float fieldOfView() const { return fieldOfView_; };$/;"	f	class:Camera
 fieldOfView_	camera.h	/^  float fieldOfView_;$/;"	m	class:Camera
-fmax	node.cpp	10;"	d	file:
+fmax	node.cpp	11;"	d	file:
 fmax	object.h	10;"	d
 frame	camera.h	/^  const qglviewer::Frame& frame() const { return frame_; };$/;"	f	class:Camera
 frame	camera.h	/^  qglviewer::Frame& frame() { return frame_; };  $/;"	f	class:Camera
@@ -153,21 +171,31 @@ frame	object.h	/^  const qglviewer::Frame& frame() const { return frame_; }$/;"	
 frame_	camera.h	/^  qglviewer::Frame frame_;$/;"	m	class:Camera
 frame_	object.h	/^  qglviewer::Frame frame_;$/;"	m	class:Object
 g	color.h	/^  float r, g, b;$/;"	m	class:Color
+getBallPos	dynamics.h	/^		const qglviewer::Vec& getBallPos(unsigned int ball) const {$/;"	f	class:Dynamics
+getBallRadius	dynamics.h	/^		double getBallRadius(unsigned int ball) const {return radiuses[ball];}$/;"	f	class:Dynamics
 getLight	scene.h	/^		const Light* getLight(int i) const { return _lights[i]; } ;$/;"	f	class:Scene
+getNbSprings	dynamics.h	/^		unsigned int getNbSprings() const {return (unsigned int) springs.size();}$/;"	f	class:Dynamics
 getPixelRay	camera.cpp	/^Ray Camera::getPixelRay(float x, float y) const$/;"	f	class:Camera
+getSpring	dynamics.h	/^		const Spring& getSpring (unsigned int spring) const {return springs[spring];}$/;"	f	class:Dynamics
+getViewer	viewer.cpp	/^Viewer* Viewer::getViewer()$/;"	f	class:Viewer
+gravity	dynamics.h	/^		qglviewer::Vec gravity;$/;"	m	class:Dynamics
+groundNormal	dynamics.h	/^		qglviewer::Vec groundNormal;$/;"	m	class:Dynamics
+groundPosition	dynamics.h	/^		qglviewer::Vec groundPosition;$/;"	m	class:Dynamics
+groundVelocity	dynamics.h	/^		qglviewer::Vec groundVelocity;$/;"	m	class:Dynamics
 height	cylinder.h	/^	float height() const { return height_; }$/;"	f	class:Cylinder
 height_	cylinder.h	/^	float height_; \/\/ height of the cylinder$/;"	m	class:Cylinder
 helpString	viewer.cpp	/^QString Viewer::helpString() const$/;"	f	class:Viewer
 illuminatedColor	light.cpp	/^Color AmbientLight::illuminatedColor(const qglviewer::Vec& eye, const Hit& hit) const {$/;"	f	class:AmbientLight
 illuminatedColor	light.cpp	/^Color DirectionalLight::illuminatedColor(const qglviewer::Vec& eye, const Hit& hit) const {$/;"	f	class:DirectionalLight
 illuminatedColor	light.cpp	/^Color PointLight::illuminatedColor(const qglviewer::Vec& eye, const Hit& hit) const {$/;"	f	class:PointLight
-image	rayTracer.h	/^  const QImage& image() const { return image_; }$/;"	f	class:RayTracer
-image_	rayTracer.h	/^  mutable QImage image_;$/;"	m	class:RayTracer
+image	rayTracer.h	/^  const QImage& image() const { return images_[0]; }$/;"	f	class:RayTracer
+images_	rayTracer.h	/^  mutable std::vector<QImage> images_;$/;"	m	class:RayTracer
 init	sphere.cpp	/^void Sphere::init(float r, int ntheta, int nphi)$/;"	f	class:Sphere
 init	viewer.cpp	/^void Viewer::init()$/;"	f	class:Viewer
 initFromDOMElement	camera.cpp	/^void Camera::initFromDOMElement(const QDomElement& e)$/;"	f	class:Camera
 initFromDOMElement	color.h	/^  void initFromDOMElement(const QDomElement& e)$/;"	f	class:Color
 initFromDOMElement	cylinder.cpp	/^void Cylinder::initFromDOMElement(const QDomElement& e)$/;"	f	class:Cylinder
+initFromDOMElement	dynamics.cpp	/^void Dynamics::initFromDOMElement(const QDomElement& e)$/;"	f	class:Dynamics
 initFromDOMElement	light.cpp	/^void DirectionalLight::initFromDOMElement(const QDomElement& e)$/;"	f	class:DirectionalLight
 initFromDOMElement	light.cpp	/^void Light::initFromDOMElement(const QDomElement& e)$/;"	f	class:Light
 initFromDOMElement	light.cpp	/^void PointLight::initFromDOMElement(const QDomElement& e)$/;"	f	class:PointLight
@@ -177,6 +205,8 @@ initFromDOMElement	object.cpp	/^void Object::initFromDOMElement(const QDomElemen
 initFromDOMElement	sphere.cpp	/^void Sphere::initFromDOMElement(const QDomElement& e)$/;"	f	class:Sphere
 initFromDOMElement	triangle.cpp	/^void Triangle::initFromDOMElement(const QDomElement& e)$/;"	f	class:Triangle
 initFromScene	viewer.cpp	/^void Viewer::initFromScene()$/;"	f	class:Viewer
+initLength	dynamics.cpp	/^float initLength = 0.2f;$/;"	v
+initLength	spring.h	/^	float initLength;  \/\/ equilibrium length$/;"	m	class:Spring
 intensity	color.h	/^  float intensity() const { return (r+g+b)\/3.0; };$/;"	f	class:Color
 intersect	cylinder.cpp	/^bool Cylinder::intersect(const Ray& ray, Hit& hit, Frame current_frame) const$/;"	f	class:Cylinder
 intersect	node.cpp	/^bool Node::intersect(const Ray& ray, Hit& min_dist_hit, Frame frame) const $/;"	f	class:Node
@@ -186,6 +216,7 @@ intersect	triangle.cpp	/^bool Triangle::intersect(const Ray& ray, Hit& hit, Fram
 intersectDisc	cylinder.cpp	/^bool Cylinder::intersectDisc(const Ray& ray, Hit& hit, float radius, float z, qglviewer::Vec normal) const {$/;"	f	class:Cylinder
 intersection	hit.h	/^  qglviewer::Vec intersection() const { return intersection_; }$/;"	f	class:Hit
 intersection_	hit.h	/^  qglviewer::Vec intersection_, normal_;$/;"	m	class:Hit
+invMasses	dynamics.h	/^		std::vector<float> invMasses; $/;"	m	class:Dynamics
 is_constant	node.h	/^		mutable bool is_constant;$/;"	m	class:Node
 keyPressEvent	viewer.cpp	/^void Viewer::keyPressEvent(QKeyEvent *e)$/;"	f	class:Viewer
 keyframe_	object.h	/^  std::list<KeyFrame> keyframe_;$/;"	m	class:Object
@@ -194,6 +225,7 @@ loadFromFile	scene.cpp	/^void Scene::loadFromFile(const QString& filename)$/;"	f
 loadScene	viewer.cpp	/^void Viewer::loadScene(const QString& name)$/;"	f	class:Viewer
 loadTextureFromFile	material.cpp	/^void Material::loadTextureFromFile(const QString& fileName)$/;"	f	class:Material
 main	main.cpp	/^int main(int argc, char** argv)$/;"	f
+masses	dynamics.h	/^		std::vector<float> masses; $/;"	m	class:Dynamics
 material	hit.h	/^  const Material& material() const { return material_; }$/;"	f	class:Hit
 material	object.h	/^  const Material& material() const { return material_; }$/;"	f	class:Object
 material_	hit.h	/^  Material material_;$/;"	m	class:Hit
@@ -202,6 +234,8 @@ n	triangle.h	/^		qglviewer::Vec v[3], n[3], uv[3];$/;"	m	class:Triangle
 nbLights	scene.h	/^		int nbLights() const { return _lights.size(); } ;$/;"	f	class:Scene
 normal	hit.h	/^  const qglviewer::Vec normal() const { return normal_; }$/;"	f	class:Hit
 normal_	hit.h	/^  qglviewer::Vec intersection_, normal_;$/;"	m	class:Hit
+obj1	spring.h	/^	unsigned int obj1;  \/\/\/< index of the first object$/;"	m	class:Spring
+obj2	spring.h	/^	unsigned int obj2;  \/\/\/< index of the second object$/;"	m	class:Spring
 operator *	color.h	/^  friend Color operator*(const Color &a, const Color &b)$/;"	f	class:Color
 operator *	color.h	/^  friend Color operator*(const Color &c, float k)$/;"	f	class:Color
 operator *	color.h	/^  friend Color operator*(float k, const Color &c)$/;"	f	class:Color
@@ -217,22 +251,26 @@ operator []	color.h	/^  float& operator[](int i) { return (&r)[i]; }$/;"	f	class
 operator const float*	color.h	/^  operator const float*() const { return &r; };$/;"	f	class:Color
 position	light.h	/^		qglviewer::Vec position() const { return position_; }$/;"	f	class:PointLight
 position_	light.h	/^		qglviewer::Vec position_;$/;"	m	class:PointLight
+positions	dynamics.h	/^		std::vector<qglviewer::Vec> positions; $/;"	m	class:Dynamics
 qMin	color.h	10;"	d
 r	color.h	/^  float r, g, b;$/;"	m	class:Color
 radius	scene.cpp	/^float Scene::radius(const Vec& center) const$/;"	f	class:Scene
 radius	sphere.h	/^  float radius() const { return radius_; }$/;"	f	class:Sphere
 radius_	sphere.h	/^  float radius_;$/;"	m	class:Sphere
+radiuses	dynamics.h	/^		std::vector<float> radiuses;$/;"	m	class:Dynamics
 rayColor	rayTracer.cpp	/^Color RayTracer::rayColor(const Ray& ray) const$/;"	f	class:RayTracer
 rayTracer	viewer.h	/^  const RayTracer& rayTracer() const { return rayTracer_; }$/;"	f	class:Viewer
 rayTracer_	viewer.h	/^  RayTracer rayTracer_;$/;"	m	class:Viewer
 reflectiveColor	material.h	/^  Color reflectiveColor() const { return reflectiveColor_; }$/;"	f	class:Material
 reflectiveColor_	material.h	/^  Color diffuseColor_, specularColor_, reflectiveColor_;$/;"	m	class:Material
+renderAnimation	rayTracer.cpp	/^void RayTracer::renderAnimation(int first_frame, int last_frame) const$/;"	f	class:RayTracer
 renderImage	rayTracer.cpp	/^void RayTracer::renderImage() const$/;"	f	class:RayTracer
+saveAnimation	rayTracer.cpp	/^void RayTracer::saveAnimation(const QString& name, bool overwrite) const$/;"	f	class:RayTracer
 saveImage	rayTracer.cpp	/^void RayTracer::saveImage(const QString& name, bool overwrite) const$/;"	f	class:RayTracer
-scene	rayTracer.h	/^  const Scene* const scene() const { return scene_; }$/;"	f	class:RayTracer
-scene	viewer.h	/^  Scene* const scene() { return scene_; };$/;"	f	class:Viewer
-scene	viewer.h	/^  const Scene* const scene() const { return scene_; };$/;"	f	class:Viewer
-scene_	rayTracer.h	/^  const Scene* scene_;$/;"	m	class:RayTracer
+scene	rayTracer.h	/^  const Scene* scene() const { return scene_; }$/;"	f	class:RayTracer
+scene	viewer.h	/^  Scene* scene() { return scene_; };$/;"	f	class:Viewer
+scene	viewer.h	/^  const Scene* scene() const { return scene_; };$/;"	f	class:Viewer
+scene_	rayTracer.h	/^  Scene* scene_;$/;"	m	class:RayTracer
 scene_	viewer.h	/^  Scene* scene_;$/;"	m	class:Viewer
 select	viewer.cpp	/^void Viewer::select(const QPoint& point)$/;"	f	class:Viewer
 setAntialiasingSamplesNumber	rayTracer.h	/^  void setAntialiasingSamplesNumber(int n) { antialiasing_ = n; }$/;"	f	class:RayTracer
@@ -245,6 +283,7 @@ setDirection	ray.cpp	/^void Ray::setDirection(const Vec& direction)$/;"	f	class:
 setFieldOfView	camera.h	/^  void setFieldOfView(float fieldOfView) { fieldOfView_ = fieldOfView; };$/;"	f	class:Camera
 setFrame	camera.h	/^  void setFrame(const qglviewer::Frame& frame) { frame_ = frame; };$/;"	f	class:Camera
 setFrame	object.h	/^  void setFrame(const qglviewer::Frame& frame) { frame_ = frame; }$/;"	f	class:Object
+setGravity	dynamics.cpp	/^void Dynamics::setGravity(const Vec& grav)$/;"	f	class:Dynamics
 setHeight	cylinder.h	/^	void setHeight(float height) { height_ = height; }$/;"	f	class:Cylinder
 setIntersection	hit.h	/^  void setIntersection(const qglviewer::Vec& intersection) { intersection_ = intersection; }$/;"	f	class:Hit
 setMaterial	hit.h	/^  void setMaterial(const Material& material) { material_ = material; }$/;"	f	class:Hit
@@ -255,7 +294,7 @@ setRadius	cylinder.h	/^	void setRadius(float radius) {bottomRadius_ = radius; to
 setRadius	sphere.h	/^  void setRadius(float radius) { radius_ = radius; }$/;"	f	class:Sphere
 setRayTracer	viewer.h	/^  void setRayTracer(const RayTracer& rayTracer) { rayTracer_ = rayTracer; }$/;"	f	class:Viewer
 setReflectiveColor	material.h	/^  void setReflectiveColor(const Color& reflectiveColor) { reflectiveColor_ = reflectiveColor; }$/;"	f	class:Material
-setScene	rayTracer.h	/^  void setScene(const Scene* const scene) { scene_ = scene; }$/;"	f	class:RayTracer
+setScene	rayTracer.h	/^  void setScene(Scene* scene) { scene_ = scene; }$/;"	f	class:RayTracer
 setScene	viewer.h	/^  void setScene(Scene* const scene) { scene_ = scene; };$/;"	f	class:Viewer
 setSpecularCoefficient	material.h	/^  void setSpecularCoefficient(float specularCoefficient) { specularCoefficient_ = specularCoefficient; }$/;"	f	class:Material
 setSpecularColor	material.h	/^  void setSpecularColor(const Color& specularColor) { specularColor_ = specularColor; }$/;"	f	class:Material
@@ -273,8 +312,11 @@ specularCoefficient	material.h	/^  float specularCoefficient() const { return sp
 specularCoefficient_	material.h	/^  float specularCoefficient_, textureScaleU_, textureScaleV_;$/;"	m	class:Material
 specularColor	material.h	/^  Color specularColor() const { return specularColor_; }$/;"	f	class:Material
 specularColor_	material.h	/^  Color diffuseColor_, specularColor_, reflectiveColor_;$/;"	m	class:Material
+springs	dynamics.h	/^		std::vector<Spring> springs;$/;"	m	class:Dynamics
 start	ray.h	/^  qglviewer::Vec start() const { return start_; }$/;"	f	class:Ray
 start_	ray.h	/^  qglviewer::Vec start_, direction_;$/;"	m	class:Ray
+stiffness	dynamics.cpp	/^float stiffness = 30.0f;$/;"	v
+stiffness	spring.h	/^	float stiffness;  \/\/ spring stiffness$/;"	m	class:Spring
 texture	material.h	/^  const QImage& texture() const { return texture_; }$/;"	f	class:Material
 textureMode	material.h	/^  TextureMode textureMode() const { return textureMode_; }$/;"	f	class:Material
 textureMode_	material.h	/^  TextureMode textureMode_;$/;"	m	class:Material
@@ -290,12 +332,16 @@ topRadius	cylinder.h	/^	float topRadius() const { return topRadius_; }$/;"	f	cla
 topRadius_	cylinder.h	/^	float topRadius_; \/\/ radius of top disc$/;"	m	class:Cylinder
 uv	triangle.h	/^		qglviewer::Vec v[3], n[3], uv[3];$/;"	m	class:Triangle
 v	triangle.h	/^		qglviewer::Vec v[3], n[3], uv[3];$/;"	m	class:Triangle
+velocities	dynamics.h	/^		std::vector<qglviewer::Vec> velocities; $/;"	m	class:Dynamics
+viscosity	dynamics.cpp	/^float viscosity = 0.1f;$/;"	v
+viscosity	dynamics.h	/^		float viscosity;$/;"	m	class:Dynamics
 xResolution	camera.h	/^  int xResolution() const { return xResolution_; };$/;"	f	class:Camera
 xResolution_	camera.h	/^  int xResolution_, yResolution_;$/;"	m	class:Camera
 yResolution	camera.h	/^  int yResolution() const { return yResolution_; };$/;"	f	class:Camera
 yResolution_	camera.h	/^  int xResolution_, yResolution_;$/;"	m	class:Camera
 ~AmbientLight	light.h	/^		virtual ~AmbientLight() {} ;$/;"	f	class:AmbientLight
 ~Cylinder	cylinder.h	/^	virtual ~Cylinder() {};$/;"	f	class:Cylinder
+~Dynamics	dynamics.h	/^		~Dynamics(){}$/;"	f	class:Dynamics
 ~Node	node.cpp	/^Node::~Node()$/;"	f	class:Node
 ~Object	object.h	/^  virtual ~Object() {};$/;"	f	class:Object
 ~Scene	scene.cpp	/^Scene::~Scene()$/;"	f	class:Scene

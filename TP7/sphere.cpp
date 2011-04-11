@@ -33,7 +33,7 @@ void Sphere::draw() const
 
 	// Draw the sphere
 	//glutSolidSphere(radius_, 20, 20);
-gluSphere(gluNewQuadric(), radius_, 20, 20);
+  gluSphere(gluNewQuadric(), radius_, 20, 20);
 
 	// Go back to the father's frame
 	glPopMatrix();
