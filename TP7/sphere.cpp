@@ -32,7 +32,8 @@ void Sphere::draw() const
 	glColor3fv(material().diffuseColor());
 
 	// Draw the sphere
-	glutSolidSphere(radius_, 20, 20);
+	//glutSolidSphere(radius_, 20, 20);
+gluSphere(gluNewQuadric(), radius_, 20, 20);
 
 	// Go back to the father's frame
 	glPopMatrix();
