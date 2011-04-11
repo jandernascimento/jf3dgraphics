@@ -34,9 +34,9 @@ void Scene::draw() const
 	_top_node->draw();
 }
 
-void Scene::animate() const
+void Scene::animate(float a) 
 {
-  _top_node->animate();
+  _top_node->animate(a);
 }
 
 void Scene::addObject(Object* o)

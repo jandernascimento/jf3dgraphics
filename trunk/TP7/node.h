@@ -20,7 +20,7 @@ class Node : public Object
 		// Affichage openGL de l'objet
 		//
 		virtual void draw() const ;
-		virtual void animate(float time) const ;
+		virtual void animate(float time);
 
 		// Rayon d'une sphčre englobante (meme grossiere).
 		//

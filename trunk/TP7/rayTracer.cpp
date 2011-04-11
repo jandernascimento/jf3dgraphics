@@ -13,14 +13,25 @@
 
 using namespace std;
 
+void RayTracer::renderAnimation(int first_frame, int last_frame) const
+{
+	// For every time step do the animation
+	// TODO add the motion blur
+	for(int t=first_frame; t<=last_frame; ++t)
+	{
+		scene_->animate((float)t);
+		renderImage();
+	}
+}
+
 void RayTracer::renderImage() const
 {
-	// Need to initialize a random machine
-	srand ( time(NULL) );
-	
 	// Create a new image with the corresponding size
-	image_ = QImage(scene_->camera().xResolution(), scene_->camera().yResolution(), 32);	
-	cout << "Creation of the QImage of resolution (" << scene_->camera().xResolution() << ", " << scene_->camera().yResolution() << ")" << endl;
+#if QT_VERSION < 0x040000
+	QImage image_ = QImage(scene_->camera().xResolution(), scene_->camera().yResolution(), 32);	
+#else
+	QImage image_ = QImage(scene_->camera().xResolution(), scene_->camera().yResolution(), QImage::Format_RGB32);
+#endif
 
 	// Populate every pixel
 	for(int i=0; i<scene_->camera().xResolution(); ++i)
@@ -41,6 +52,9 @@ void RayTracer::renderImage() const
 			// Set the color
 			image_.setPixel(i, j, current_color / (float)antialiasing_);
 		}
+
+	// Put the current image in the list of images
+	images_.push_back(image_);
 }
 
 Color RayTracer::rayColor(const Ray& ray) const
@@ -90,3 +104,17 @@ void RayTracer::saveImage(const QString& name, bool overwrite) const
   else
     QMessageBox::information(NULL, "Saving done", "Image successfully saved in "+fileName);
 }
+
+void RayTracer::saveAnimation(const QString& name, bool overwrite) const
+{
+  QString fileName = name;
+  QFileInfo info(fileName);
+
+  for(int i=0; i<(int)images_.size(); ++i)
+  {
+	  QString temp = fileName + QString::number(i) + QString(".jpg");
+	  if (!images_[i].save(temp, "JPEG", 95))
+		  QMessageBox::information(NULL, "Error", "Error while saving "+temp);
+  }
+}
+

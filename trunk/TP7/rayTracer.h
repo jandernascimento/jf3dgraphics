@@ -2,6 +2,7 @@
 #define RAY_TRACER_H
 
 #include <qimage.h>
+#include <vector>
 #include "color.h"
 #include "ray.h"
 
@@ -12,20 +13,24 @@ class RayTracer
 public :
   RayTracer() : scene_(NULL), antialiasing_(4) {};
 
-  const Scene* const scene() const { return scene_; }
-  const QImage& image() const { return image_; }
+  const Scene* scene() const { return scene_; }
+  const QImage& image() const { return images_[0]; }
 
-  void setScene(const Scene* const scene) { scene_ = scene; }
+  void setScene(Scene* scene) { scene_ = scene; }
   void setAntialiasingSamplesNumber(int n) { antialiasing_ = n; }
 
   void renderImage() const;
+  void renderAnimation(int first_frame, int last_frame) const;
+  void cleanImageList() const { images_.clear(); } ;
+
   void saveImage(const QString& name, bool overwrite=false) const;
+  void saveAnimation(const QString& name, bool overwrite=false) const;
 
   Color rayColor(const Ray& ray) const;
 
 private:
-  const Scene* scene_;
-  mutable QImage image_;
+  Scene* scene_;
+  mutable std::vector<QImage> images_;
 
   int antialiasing_;
 };
