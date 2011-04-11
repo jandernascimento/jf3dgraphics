@@ -2,6 +2,7 @@
 #include "node.h"
 #include "sphere.h"
 #include "cylinder.h"
+#include "dynamics.h"
 
 #include <float.h>
 #include <qmessagebox.h>
@@ -152,7 +153,12 @@ void Node::initFromDOMElement(const QDomElement& e)
 				s->initFromDOMElement(e);
 				addObject(s);
 			}
-			else if(e.tagName() == "Cylinder")
+			else if (e.tagName() == "Dynamics")
+			{
+				Dynamics* d = new Dynamics();
+				s->initFromDOMElement(e);
+				addObject(s);
+			}else if(e.tagName() == "Cylinder")
 			{
 				Cylinder* c = new Cylinder();
 				c->initFromDOMElement(e);
