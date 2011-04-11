@@ -156,8 +156,8 @@ void Node::initFromDOMElement(const QDomElement& e)
 			else if (e.tagName() == "Dynamics")
 			{
 				Dynamics* d = new Dynamics();
-				s->initFromDOMElement(e);
-				addObject(s);
+				d->initFromDOMElement(e);
+				addObject(d);
 			}else if(e.tagName() == "Cylinder")
 			{
 				Cylinder* c = new Cylinder();
