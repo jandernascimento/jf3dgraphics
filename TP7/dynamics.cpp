@@ -12,7 +12,7 @@ using namespace qglviewer;
 // some constants that can be used for springs
 float stiffness = 30.0f;
 float initLength = 0.2f;
-float damping = 0.2f;
+float damping = 5.2f;
 float viscosity = 0.1f;
 
 
@@ -97,7 +97,7 @@ void Dynamics::initFromDOMElement(const QDomElement& e)
 
 	addObject(t1); addObject(t2);
   
-  addSpring(0, 1, 15, 3, 4);
+  addSpring(0, 1, stiffness, initLength, damping);
 }
 
 /////////////////////////
