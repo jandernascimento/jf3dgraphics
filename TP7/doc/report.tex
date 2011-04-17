@@ -23,7 +23,7 @@
 
 \emph{Explain why rendering such a scene is very likely to produce aliasing effects. Will the
 deformation of the sea surface due to waves increase or tend to hide these visual problems?}
-
+The horizon that should be displayed in this scenario may produce aliasing due to the procedural modeling (high definition) displayed in a regular sampling\ref{iaow}.
 
 \section{Question 2}
 
@@ -50,8 +50,22 @@ disappearing. How would you animate and render the foam? Give the animation mode
 you use, and describe the geometric primitive or the texture it should control, and discuss its
 rendering.}
 
-To create the foam over the waves, we first need to generate and understand the foam dynamics. If we think about the environment conditions to generate the foam, the waves must be sufficiently high enough to break and produce the foam(slope greater than 1/6). 
+To create the foam over the waves, we first need to generate and understand the foam dynamics. If we think about the environment conditions to generate the foam, the waves must be sufficiently high enough to break and produce the foam(slope greater than 1/6 \cite{sow}). 
 It is possible to compute this phenomene using two dinamical fields (from fluid dynamics): surface elevation and potential velocity.
+
+\begin{thebibliography}{9}
+
+\bibitem{sow}
+  Simulating Ocean Water,
+  TESSENDORF, Jerry.
+  2001
+\end{thebibliography}
+
+\bibitem{iaow}
+  Interactive Animation of Ocean Waves,
+  HINSINGER, Damien. NEYRET, Fabrice. CANI, Marie-Paule.
+  iMAGIS-GRAVIR
+\end{thebibliography}
 
 \end{document}
 
