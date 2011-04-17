@@ -21,33 +21,35 @@
 
 \section{Question 1}
 
-Explain why rendering such a scene is very likely to produce aliasing effects. Will the
-deformation of the sea surface due to waves increase or tend to hide these visual problems?
+\emph{Explain why rendering such a scene is very likely to produce aliasing effects. Will the
+deformation of the sea surface due to waves increase or tend to hide these visual problems?}
+
 
 \section{Question 2}
 
-A first idea for modeling the sea surface is to represent it by an initially flat mesh, whose
+\emph{A first idea for modeling the sea surface is to represent it by an initially flat mesh, whose
 vertices will be displaced on the vertical axis using z=Height(x,y,t). Two possible flat
 quadrangular meshes are considered: a regular 2D grid and a grid computed by projecting the
 pixels of the screen onto the horizontal plane of the sea, along the viewing direction (so the
 mesh changes each time the camera moves). Which of these representations would you use
-and why?
+and why?}
 
 \section{Question 3}
 
-Another idea is to directly render the sea surface from the procedural equation of its
+\emph{Another idea is to directly render the sea surface from the procedural equation of its
 geometry Sea(x,y,t) = (x, y, Height(x,y,t)). Which algorithm would you use? Explain the
 computations involved on a figure. Can you adapt this algorithm to model specular
-reflections while getting real-time performances?
+reflections while getting real-time performances?}
 
 \section{Question 4}
 
-The sea model is to be enhanced with some white foam: to simplify the problem, we
+\emph{The sea model is to be enhanced with some white foam: to simplify the problem, we
 suppose that foam is projected forwards from the crest of the waves at a given distance from
 the sea shore, falls onto the water surface and then moves with it for a while before
 disappearing. How would you animate and render the foam? Give the animation model would
 you use, and describe the geometric primitive or the texture it should control, and discuss its
-rendering.
+rendering.}
+
 
 \end{document}
 
