@@ -262,7 +262,8 @@ void Dynamics::collisionBallBall(Vec& x1, Vec& v1, float r1, float invm1,
 		return;
 
 	// Plane-ball distance :
-	Vec gap = x1 - x2;
+	//Vec gap = x1 - x2;
+	Vec gap = x2 -x1;
 	float distance=gap.x*gap.x+gap.y*gap.y+gap.z*gap.z;
 	distance=sqrt(distance);
 	if( distance > (r1+r2) ){ 
@@ -271,7 +272,8 @@ void Dynamics::collisionBallBall(Vec& x1, Vec& v1, float r1, float invm1,
 	printf("colided!!\n");	
 
 	Vec normal=gap/distance;
-	float penetration=abs(distance);
+	float penetration=r1+r2-distance;//distance;
+	//float penetration=distance;
 	// Penetration velocity :
 	float vpen = (v1-v2)*normal;
 	
