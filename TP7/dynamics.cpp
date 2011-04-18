@@ -269,9 +269,11 @@ void Dynamics::collisionBallBall(Vec& x1, Vec& v1, float r1, float invm1,
 		return;
 	}
 	printf("colided!!\n");	
+
+	Vec normal=gap/distance;
+	float penetration=abs(distance);
 	// Penetration velocity :
-	float vpen = (v1-v2)*x1;
-	//float vpen = (v1-v2)*normal;
+	float vpen = (v1-v2)*normal;
 	
 	// Correction distribution (the heaviest object moves less) :
 	float corr1 = invm1 / (invm1+invm2);
@@ -282,15 +284,10 @@ void Dynamics::collisionBallBall(Vec& x1, Vec& v1, float r1, float invm1,
 	corr2 *= (1+rebound);
 	
 	// position and velocity updates :
-	x1 = x1 - (corr1 * distance) * gap;
-	v1 = v1 - (corr1 * vpen) * gap;
-	x2 = x2 + (corr2 * distance) * gap;
-	v2 = v2 + (corr2 * vpen) * gap;		
-	// position and velocity updates :
-	//x1 = x1 - (corr1 * penetration) * normal;
-	//v1 = v1 - (corr1 * vpen) * normal;
-	//x2 = x2 + (corr2 * penetration) * normal;
-	//v2 = v2 + (corr2 * vpen) * normal;		
+	x1 = x1 - (corr1 * penetration) * normal;
+	v1 = v1 - (corr1 * vpen) * normal;
+	x2 = x2 + (corr2 * penetration) * normal;
+	v2 = v2 + (corr2 * vpen) * normal;		
 
 
  // Q_UNUSED(x1); Q_UNUSED(v1); Q_UNUSED(r1); Q_UNUSED(invm1);
