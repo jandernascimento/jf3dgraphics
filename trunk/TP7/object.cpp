@@ -72,10 +72,28 @@ Frame Object::MultiplyFrame(const Frame& f1, const Frame& f2) const
 	return f;
 }
 
-void Object::animate(float time)
-{
-  
-  //objects in _keyframe are two objects
-  //set the attribute _frame as the interpolations
-  
+void Object::animate(float time){
+
+    list<KeyFrame>::const_iterator iter = keyframe_.begin();
+    list<KeyFrame>::const_iterator iter_next = iter;
+
+    Quaternion q1, q2;
+    float t1, t2;
+    bool find = false;
+    for (iter_next++; !find && iter_next != keyframe_.end(); iter++, iter_next++) {
+        if (time >= (*iter).first && time < (*iter_next).first) {
+            t1 = (*iter).first;
+            q1 = (*iter).second.orientation();
+            t2 = (*iter_next).first;
+            q2 = (*iter_next).second.orientation();
+            find = true;
+        }
+    }
+
+    if (find) {
+        float t = (time - t1) / (t2 - t1);
+        Quaternion q = Quaternion::slerp(q1, q2, t, true);
+        frame_.setRotation(q);
+	//frame_.setTranslation(2,3,1);
+    }
 }
