@@ -2,7 +2,7 @@
 <Scene>
   <Node>
     <Frame>
-      <position x="0.0" y="2.0" z="2.0"/>
+      <position x="0.0" y="2.0" z="3.0"/>
       <orientation q0="0" q1="0" q2="0" q3="1" />
     </Frame>
 
@@ -200,7 +200,7 @@
     <Node>
       <Frame>
         <position x="0" y="0.2" z="0.0" />
-        <orientation q0="0.0" q1="0.0" q2="0.0" q3="1.0" />
+        <orientation q0="0.0" q1="-0.098" q2="0.0" q3="0.9951" />
       </Frame>
       
       <com>left upper-leg connector</com>
@@ -233,7 +233,7 @@
       <Node>
       <Frame>
         <position x="0" y="0.0" z="-1.08" />
-        <orientation q0="0.0" q1="0.0" q2="0.0" q3="1.0" />
+        <orientation q0="0.0" q1="0.098" q2="0.0" q3="0.9951" />
       </Frame>
       
         <com>left upper-leg connector</com>
@@ -248,12 +248,94 @@
           <orientation q0="0.0" q1="0.0" q2="0.0" q3="1.0" />
         </Frame>
         </Sphere>
+        
+      <com>left lower-leg</com>
+      <Cylinder bottomRadius="0.2" topRadius="0.15" height="1.0">
+        <Material>
+          <DiffuseColor red="0.8" green="0.6" blue="0.2"/>
+          <ReflectiveColor red="0.2" green="0.2" blue="0.2"/>
+          <SpecularColor red="0.5" green="0.5" blue="0.5" exponent="16"/>
+        </Material>
+        <Frame>
+          <position x="0.0" y="0.0" z="-0.08"/>
+          <orientation q0="1" q1="0.0" q2="0.0" q3="0.0"/>
+        </Frame>
+      </Cylinder>
 
       </Node>
 
     </Node>
       
-    
+   <com>-------RIGHT LEG----------------------------------</com>
+    <Node>
+      <Frame>
+        <position x="0" y="-0.2" z="0.0" />
+        <orientation q0="0.0" q1="-0.098" q2="0.0" q3="0.9951" />
+      </Frame>
+      
+      <com>right upper-leg connector</com>
+      <Sphere radius="0.15">
+      <Material>
+        <DiffuseColor red="0.9" green="0.1" blue="0.1" />
+        <SpecularColor red="0.8" green="0.6" blue="0.6" exponent="2" />
+        <ReflectiveColor red="0.4" green="0.2" blue="0.2" />
+      </Material>
+      <Frame>
+        <position x="0" y="0.0" z="0.0" />
+        <orientation q0="0.0" q1="0.0" q2="0.0" q3="1.0" />
+      </Frame>
+      </Sphere>
+      
+      <com>right upper-leg</com>
+      <Cylinder bottomRadius="0.2" topRadius="0.2" height="1.0">
+        <Material>
+          <DiffuseColor red="0.8" green="0.6" blue="0.2"/>
+          <ReflectiveColor red="0.2" green="0.2" blue="0.2"/>
+          <SpecularColor red="0.5" green="0.5" blue="0.5" exponent="16"/>
+        </Material>
+        <Frame>
+          <position x="0.0" y="0.0" z="-0.08"/>
+          <orientation q0="1" q1="0.0" q2="0.0" q3="0.0"/>
+        </Frame>
+      </Cylinder>
+      
+      <com>Lower-leg</com>
+      <Node>
+      <Frame>
+        <position x="0" y="0.0" z="-1.08" />
+        <orientation q0="0.0" q1="0.098" q2="0.0" q3="0.9951" />
+      </Frame>
+      
+        <com>left upper-leg connector</com>
+        <Sphere radius="0.15">
+        <Material>
+          <DiffuseColor red="0.9" green="0.1" blue="0.1" />
+          <SpecularColor red="0.8" green="0.6" blue="0.6" exponent="2" />
+          <ReflectiveColor red="0.4" green="0.2" blue="0.2" />
+        </Material>
+        <Frame>
+          <position x="0" y="0.0" z="0.0" />
+          <orientation q0="0.0" q1="0.0" q2="0.0" q3="1.0" />
+        </Frame>
+        </Sphere>
+        
+      <com>left lower-leg</com>
+      <Cylinder bottomRadius="0.2" topRadius="0.15" height="1.0">
+        <Material>
+          <DiffuseColor red="0.8" green="0.6" blue="0.2"/>
+          <ReflectiveColor red="0.2" green="0.2" blue="0.2"/>
+          <SpecularColor red="0.5" green="0.5" blue="0.5" exponent="16"/>
+        </Material>
+        <Frame>
+          <position x="0.0" y="0.0" z="-0.08"/>
+          <orientation q0="1" q1="0.0" q2="0.0" q3="0.0"/>
+        </Frame>
+      </Cylinder>
+
+      </Node>
+
+    </Node>
+   
 
   </Node>
 
