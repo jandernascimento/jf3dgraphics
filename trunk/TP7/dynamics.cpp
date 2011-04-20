@@ -209,10 +209,8 @@ void Dynamics::animate(float t)
 	for(unsigned int i=0; i<nbBalls; ++i ){
 //		// avec le sol
 		collisionBallPlane(positions[i], velocities[i], radiuses[i], invMasses[i], groundPosition, groundVelocity, groundNormal, 0.0f, 0.5f);
-		//collisionBallBall(Vec& x1, Vec& v1, float r1, float invm1,Vec& x2, Vec& v2, float r2, float invm2,float rebound )
-		//collisionBallBall(x1,v1,r1,invm1,x2,v2,r2,invm2,rebound )
 		for(unsigned int j=i+1; j<nbBalls; ++j ){
-			//collisionBallBall(positions[i], velocities[i], radiuses[i], invMasses[i], groundPosition, groundVelocity, 0.1f, 0.0f, 0.5f);
+			//collisionBallPlane(positions[i], velocities[i], radiuses[i], invMasses[i], groundPosition, groundVelocity,groundNormal, 0.0f, 0.5f);
 			collisionBallBall(positions[i], velocities[i], radiuses[i], invMasses[i], positions[j], velocities[j], radiuses[j], invMasses[j], 0.5f);
 		}
 	}
