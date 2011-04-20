@@ -79,12 +79,6 @@ void Dynamics::initFromDOMElement(const QDomElement& e)
 	f.setReferenceFrame(&_manipulated_frame);
 	Viewer::getViewer()->setManipulatedFrame(&_manipulated_frame);
 	drawing_sphere[0]->setFrame(f);
-	
-	// add a second ball
-	Vec position  = initPos + Vec(0.0f, -2.0f*radius, 0.0f);
-	Vec position2  = position + Vec(0.0f, -2.0f*radius, 0.0f);
-	unsigned int ball2 = addBall(position, Vec(0.0f, 1.0f, 0.0f), mass, radius);
-	//unsigned int ball3 = addBall(position2, Vec(0.0f, 0.5f, 1.0f), mass, radius);
 
 	// add 2 triangles to represent the ground plane (for collisions)
 	Vec a = groundPosition + Vec(-10.0f, 10.0f, 0.0f);
@@ -97,22 +91,17 @@ void Dynamics::initFromDOMElement(const QDomElement& e)
 	Triangle *t2=new Triangle(b,c,d);
 	t2->setMaterial(mat);
 
-	addObject(t1); addObject(t2);
-  
-  	addSpring(0, 1, stiffness, initLength, damping);
-//  	addSpring(1, 2, stiffness, initLength, damping);
-  
-  //adding the third ball and second string 
-	position  = position + Vec(0.0f, -2.0f*radius, 0.0f);
-	unsigned int ball3 = addBall(position, Vec(0.0f, 1.0f, 0.0f), mass, radius);
-  
-  addSpring(1, 2, stiffness, initLength, damping);
-  
-  //adding the forth ball and third string 
-	position  = position + Vec(0.0f, -2.0f*radius, 0.0f);
-	unsigned int ball4 = addBall(position, Vec(0.0f, 1.0f, 0.0f), mass, radius);
-  
-  addSpring(2, 3, stiffness, initLength, damping);
+  	Vec position  = initPos;// + Vec(0.0f, -2.0f*radius, 0.0f);
+
+	int nbOfAttachedSpheres=10;
+	
+	for(int x=0;x<nbOfAttachedSpheres;x++){
+		position  = position + Vec(0.0f, -2.0f*radius, 0.0f);
+		unsigned int ballid=addBall(position, Vec(0.0f, 1.0f, 0.0f), mass, radius);
+  		if((x+1)<nbOfAttachedSpheres)
+			addSpring(x, x+1, stiffness, initLength, damping);
+	}
+
 }
 
 /////////////////////////
@@ -281,7 +270,6 @@ void Dynamics::collisionBallBall(Vec& x1, Vec& v1, float r1, float invm1,
 	if( distance > (r1+r2) ){ 
 		return;
 	}
-	printf("colided!!\n");	
 
 	Vec normal=gap/distance;
 	float penetration=r1+r2-distance;//distance;
