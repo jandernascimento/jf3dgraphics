@@ -1,0 +1,404 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>File:Antialiased-lanczos.png - Wikipedia, the free encyclopedia</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="generator" content="MediaWiki 1.17wmf1" />
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="/w/index.php?title=File:Antialiased-lanczos.png&amp;action=edit" />
+<link rel="edit" title="Edit this page" href="/w/index.php?title=File:Antialiased-lanczos.png&amp;action=edit" />
+<link rel="apple-touch-icon" href="http://en.wikipedia.org/apple-touch-icon.png" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://en.wikipedia.org/w/api.php?action=rsd" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%7Cmediawiki.legacy.shared%7Cskins.vector&amp;only=styles&amp;skin=vector" type="text/css" media="all" />
+<meta name="ResourceLoaderDynamicStyles" content="" /><link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector" type="text/css" media="all" />
+<style type="text/css" media="all">a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: enwiki:resourceloader:filter:minify-css:5:f2a9127573a22335c2a9102b208c73e7 */</style>
+<script type="text/javascript">wgNamespaceNumber=6;wgAction="view";wgPageName="File:Antialiased-lanczos.png";wgMainPageTitle="Main Page";wgWikimediaMobileUrl="http:\/\/en.m.wikipedia.org\/wiki";</script><script src="http://bits.wikimedia.org/w/extensions-1.17/WikimediaMobile/MobileRedirect.js?8.2" type="text/javascript"></script><!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/skins-1.17/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr ns-6 ns-subject page-File_Antialiased-lanczos_png skin-vector">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- sitenotice -->
+			<div id="siteNotice"><!-- centralNotice loads here --></div>
+			<!-- /sitenotice -->
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading">File:Antialiased-lanczos.png</h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+				<!-- tagline -->
+				<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+				<!-- /tagline -->
+				<!-- subtitle -->
+				<div id="contentSub"></div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav">
+					Jump to: <a href="#mw-head">navigation</a>,
+					<a href="#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodytext -->
+				<ul id="filetoc"><li><a href="#file">File</a></li>
+<li><a href="#filehistory">File history</a></li>
+<li><a href="#filelinks">File links</a></li></ul><div class="fullImageLink" id="file"><a href="http://upload.wikimedia.org/wikipedia/en/f/fc/Antialiased-lanczos.png"><img alt="File:Antialiased-lanczos.png" src="http://upload.wikimedia.org/wikipedia/en/f/fc/Antialiased-lanczos.png" width="128" height="128" /></a><br /><small>No higher resolution available.</small></div>
+<div class="fullMedia"><a href="http://upload.wikimedia.org/wikipedia/en/f/fc/Antialiased-lanczos.png" class="internal" title="Antialiased-lanczos.png">Antialiased-lanczos.png</a>‎ <span class="fileInfo">(128 × 128 pixels, file size: 11 KB, MIME type: image/png)</span>
+</div>
+<h2><span class="editsection">[<a href="/w/index.php?title=File:Antialiased-lanczos.png&amp;action=edit&amp;section=1" title="Edit section: Summary">edit</a>]</span> <span class="mw-headline" id="Summary">Summary</span></h2>
+<p>Antialiased chessboard using the Lanczos algorithm, made by myself based on the source in File:Antialiased.png's description. This one should be relatively close to an ideal filter, primarily because I used a lot of taps (several million) for the more problematic pixels.</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=File:Antialiased-lanczos.png&amp;action=edit&amp;section=2" title="Edit section: Licensing:">edit</a>]</span> <span class="mw-headline" id="Licensing:">Licensing:</span></h2>
+<table class="plainlinks imbox imbox-license" style="">
+<tr>
+<td class="mbox-image"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/62/PD-icon.svg/52px-PD-icon.svg.png" width="52" height="52" /></td>
+<td class="mbox-text" style=""><i>I, the copyright holder of this work, hereby release it into the <b><a href="http://en.wikipedia.org/wiki/public_domain" class="extiw" title="w:public domain">public domain</a></b>. This applies worldwide.</i><br />
+<p>In case this is not legally possible,<br /></p>
+<i>I grant any entity the right to use this work <b>for any purpose</b>, without any conditions, unless such conditions are required by law.</i></td>
+</tr>
+</table>
+<p>Here's the source I used, written by myself. The choice of 16384x16384 might have been overkill; I cannot spot any significant differences between this and using 1024x1024 taps all over the image. The generation took about an hour on one core of an Intel Q9450. Compile and link with "gcc -O3 -o antialias antialias.c -lm -std=gnu99".</p>
+<pre>
+<tt>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;math.h&gt;
+
+/*
+ * Do a finer sampling the higher up we get in the picture,
+ * since there's much more detail there.
+ */
+#define SAMPLES_FROM_Y(y) ((16384 * 512) / (y*y + 512))
+#define MAX_SAMPLES SAMPLES_FROM_Y(0)   
+
+float weights[MAX_SAMPLES][MAX_SAMPLES];
+
+static inline int color(double x, double y)
+{
+        double t, z;
+        int i, j, k;  
+
+        x = x * (1.0 / 128.0) - 0.5;
+        y = y * (1.0 / 2048.0); 
+
+        t = 1.0 / (y + 0.001);
+        z = t * x;
+        i = floor(t);
+        j = floor(z);
+        k = i + j;
+        return ((k % 2) != 0);
+}
+
+static double sinc(double x)
+{
+        static const double cutoff = 1.220703668e-4;  /* sqrt(sqrt(eps)) */
+
+        if (abs(x) &lt; cutoff) {
+                /* For small |x|, use Taylor series instead */
+                const double x2 = x * x;
+                const double x4 = x2 * x2;
+
+                return 1.0 - x2 / 6.0 + x4 / 120.0;
+        } else {
+                return sin(x) / x;
+        }
+}
+
+static double lanczos_tap(double x)
+{ 
+        if (x &lt; -3.0 || x &gt; 3.0)
+                return 0.0;
+        if (x &lt; 0.0)
+                return sinc(-x*M_PI) * sinc(-x*M_PI / 3.0);
+        else
+                return sinc(x*M_PI) * sinc(x*M_PI / 3.0);
+}
+
+static void precalculate_weights(unsigned num_samples)
+{
+        double total = 0.0;
+        for (int yi = 0; yi &lt; num_samples; ++yi) {
+                double sy = 6.0 * ((double)yi / num_samples - 0.5);
+                double wy = lanczos_tap(sy);
+                for (int xi = 0; xi &lt; num_samples; ++xi) {
+                        double sx = 6.0 * ((double)xi / num_samples - 0.5);
+                        weights[yi][xi] = wy * lanczos_tap(sx);
+                        total += weights[yi][xi];
+                }
+        }
+
+        double inv_total = 1.0 / total;
+        for (int yi = 0; yi &lt; num_samples; ++yi) {
+                for (int xi = 0; xi &lt; num_samples; ++xi) {
+                        weights[yi][xi] *= inv_total;
+                }
+        }
+}
+
+static double antialiased_color(double x, double y, unsigned num_samples)
+{
+        double acc = 0.0;
+        double delta = 6.0 / num_samples;
+        int xi, yi;
+        double sx, sy;
+
+        for (yi = 0, sy = y - 3.0; yi &lt; num_samples; ++yi, sy += delta) {
+                for (xi = 0, sx = x - 3.0; xi &lt; num_samples; ++xi, sx += delta) {
+                        if (color(sx, sy)) {
+                                acc += weights[yi][xi];
+                        }
+                }
+        } 
+        return acc;
+}
+</tt>
+</pre>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 170/1000000
+Post-expand include size: 2587/2048000 bytes
+Template argument size: 880/2048000 bytes
+Expensive parser function count: 1/500
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:20818297-0!*!0!!en!4 and timestamp 20110424143432 -->
+<h2 id="filehistory">File history</h2>
+<div id="mw-imagepage-section-filehistory">
+<p>Click on a date/time to view the file as it appeared at that time.
+</p>
+<table class="wikitable filehistory">
+<tr><td></td><th>Date/Time</th><th>Thumbnail</th><th>Dimensions</th><th>User</th><th>Comment</th></tr>
+<tr><td>current</td><td class='filehistory-selected' style='white-space: nowrap;'><a href="http://upload.wikimedia.org/wikipedia/en/f/fc/Antialiased-lanczos.png">16:41, 19 March 2011</a></td><td><a href="http://upload.wikimedia.org/wikipedia/en/f/fc/Antialiased-lanczos.png"><img alt="Thumbnail for version as of 16:41, 19 March 2011" src="http://upload.wikimedia.org/wikipedia/en/thumb/f/fc/Antialiased-lanczos.png/120px-Antialiased-lanczos.png" width="120" height="120" /></a></td><td>128×128 <span style='white-space: nowrap;'>(11 KB)</span></td><td><a href="/wiki/User:Dicklyon" title="User:Dicklyon" class="mw-userlink">Dicklyon</a> <span style="white-space: nowrap;"> <span class="mw-usertoollinks">(<a href="/wiki/User_talk:Dicklyon" title="User talk:Dicklyon">talk</a> | <a href="/wiki/Special:Contributions/Dicklyon" title="Special:Contributions/Dicklyon">contribs</a>)</span></span></td><td> <span class="comment">(compromise, since for many displays it goes too far to do full sRGB gamma hack)</span></td></tr>
+<tr><td><a href="/w/index.php?title=File:Antialiased-lanczos.png&amp;action=revert&amp;oldimage=20110319164106%21Antialiased-lanczos.png&amp;wpEditToken=f1924d5a83bbc2d460a3a350334f6840%2B%5C" title="File:Antialiased-lanczos.png">revert</a></td><td  style='white-space: nowrap;'><a href="http://upload.wikimedia.org/wikipedia/en/archive/f/fc/20110319164106%21Antialiased-lanczos.png">03:06, 23 September 2010</a></td><td><a href="http://upload.wikimedia.org/wikipedia/en/archive/f/fc/20110319164106%21Antialiased-lanczos.png"><img alt="Thumbnail for version as of 03:06, 23 September 2010" src="http://upload.wikimedia.org/wikipedia/en/thumb/archive/f/fc/20110319164106%21Antialiased-lanczos.png/120px-Antialiased-lanczos.png" width="120" height="120" /></a></td><td>128×128 <span style='white-space: nowrap;'>(15 KB)</span></td><td><a href="/wiki/User:Ancient_Anomaly" title="User:Ancient Anomaly" class="mw-userlink">Ancient Anomaly</a> <span style="white-space: nowrap;"> <span class="mw-usertoollinks">(<a href="/wiki/User_talk:Ancient_Anomaly" title="User talk:Ancient Anomaly">talk</a> | <a href="/wiki/Special:Contributions/Ancient_Anomaly" title="Special:Contributions/Ancient Anomaly">contribs</a>)</span></span></td><td> <span class="comment">(Aactually it was still too dark. This one should be correct.)</span></td></tr>
+<tr><td><a href="/w/index.php?title=File:Antialiased-lanczos.png&amp;action=revert&amp;oldimage=20100923030628%21Antialiased-lanczos.png&amp;wpEditToken=f42ed9d859e25d13051d758da42a2984%2B%5C" title="File:Antialiased-lanczos.png">revert</a></td><td  style='white-space: nowrap;'><a href="http://upload.wikimedia.org/wikipedia/en/archive/f/fc/20100923030628%21Antialiased-lanczos.png">03:03, 23 September 2010</a></td><td><a href="http://upload.wikimedia.org/wikipedia/en/archive/f/fc/20100923030628%21Antialiased-lanczos.png"><img alt="Thumbnail for version as of 03:03, 23 September 2010" src="http://upload.wikimedia.org/wikipedia/en/thumb/archive/f/fc/20100923030628%21Antialiased-lanczos.png/120px-Antialiased-lanczos.png" width="120" height="120" /></a></td><td>128×128 <span style='white-space: nowrap;'>(11 KB)</span></td><td><a href="/wiki/User:Ancient_Anomaly" title="User:Ancient Anomaly" class="mw-userlink">Ancient Anomaly</a> <span style="white-space: nowrap;"> <span class="mw-usertoollinks">(<a href="/wiki/User_talk:Ancient_Anomaly" title="User talk:Ancient Anomaly">talk</a> | <a href="/wiki/Special:Contributions/Ancient_Anomaly" title="Special:Contributions/Ancient Anomaly">contribs</a>)</span></span></td><td> <span class="comment">(Reverted to version as of 09:07, 23 December 2009 #808080 is NOT halfway between black and white, sRGB is not linear)</span></td></tr>
+<tr><td><a href="/w/index.php?title=File:Antialiased-lanczos.png&amp;action=revert&amp;oldimage=20100923030335%21Antialiased-lanczos.png&amp;wpEditToken=4a5361944e73fd9cce86198d8a1c6f49%2B%5C" title="File:Antialiased-lanczos.png">revert</a></td><td  style='white-space: nowrap;'><a href="http://upload.wikimedia.org/wikipedia/en/archive/f/fc/20100923030335%21Antialiased-lanczos.png">12:48, 20 July 2010</a></td><td><a href="http://upload.wikimedia.org/wikipedia/en/archive/f/fc/20100923030335%21Antialiased-lanczos.png"><img alt="Thumbnail for version as of 12:48, 20 July 2010" src="http://upload.wikimedia.org/wikipedia/en/thumb/archive/f/fc/20100923030335%21Antialiased-lanczos.png/120px-Antialiased-lanczos.png" width="120" height="120" /></a></td><td>128×128 <span style='white-space: nowrap;'>(10 KB)</span></td><td><a href="/wiki/User:Technion" title="User:Technion" class="mw-userlink">Technion</a> <span style="white-space: nowrap;"> <span class="mw-usertoollinks">(<a href="/wiki/User_talk:Technion" title="User talk:Technion">talk</a> | <a href="/wiki/Special:Contributions/Technion" title="Special:Contributions/Technion">contribs</a>)</span></span></td><td> <span class="comment">(Reverted to version as of 14:27, 23 December 2008: Revert to original image by Sesse. In original image, gray at top of image is #808080, halfway between black and white as would be expected; in Dicklyon’s modified version, gray at top is much lighter t)</span></td></tr>
+<tr><td><a href="/w/index.php?title=File:Antialiased-lanczos.png&amp;action=revert&amp;oldimage=20100720124817%21Antialiased-lanczos.png&amp;wpEditToken=67cd5aed462230794d8fef64c7396739%2B%5C" title="File:Antialiased-lanczos.png">revert</a></td><td  style='white-space: nowrap;'><a href="http://upload.wikimedia.org/wikipedia/en/archive/f/fc/20100720124817%21Antialiased-lanczos.png">09:07, 23 December 2009</a></td><td><a href="http://upload.wikimedia.org/wikipedia/en/archive/f/fc/20100720124817%21Antialiased-lanczos.png"><img alt="Thumbnail for version as of 09:07, 23 December 2009" src="http://upload.wikimedia.org/wikipedia/en/thumb/archive/f/fc/20100720124817%21Antialiased-lanczos.png/120px-Antialiased-lanczos.png" width="120" height="120" /></a></td><td>128×128 <span style='white-space: nowrap;'>(11 KB)</span></td><td><a href="/wiki/User:Dicklyon" title="User:Dicklyon" class="mw-userlink">Dicklyon</a> <span style="white-space: nowrap;"> <span class="mw-usertoollinks">(<a href="/wiki/User_talk:Dicklyon" title="User talk:Dicklyon">talk</a> | <a href="/wiki/Special:Contributions/Dicklyon" title="Special:Contributions/Dicklyon">contribs</a>)</span></span></td><td> <span class="comment">(Adjust tone scale, since no gamma correction was applied when the image was created.\)</span></td></tr>
+<tr><td><a href="/w/index.php?title=File:Antialiased-lanczos.png&amp;action=revert&amp;oldimage=20091223090729%21Antialiased-lanczos.png&amp;wpEditToken=caa76d7b5642d6dcc77ab3880a03643b%2B%5C" title="File:Antialiased-lanczos.png">revert</a></td><td  style='white-space: nowrap;'><a href="http://upload.wikimedia.org/wikipedia/en/archive/f/fc/20091223090729%21Antialiased-lanczos.png">14:27, 23 December 2008</a></td><td><a href="http://upload.wikimedia.org/wikipedia/en/archive/f/fc/20091223090729%21Antialiased-lanczos.png"><img alt="Thumbnail for version as of 14:27, 23 December 2008" src="http://upload.wikimedia.org/wikipedia/en/thumb/archive/f/fc/20091223090729%21Antialiased-lanczos.png/120px-Antialiased-lanczos.png" width="120" height="120" /></a></td><td>128×128 <span style='white-space: nowrap;'>(10 KB)</span></td><td><a href="/wiki/User:Sesse" title="User:Sesse" class="mw-userlink">Sesse</a> <span style="white-space: nowrap;"> <span class="mw-usertoollinks">(<a href="/wiki/User_talk:Sesse" title="User talk:Sesse">talk</a> | <a href="/wiki/Special:Contributions/Sesse" title="Special:Contributions/Sesse">contribs</a>)</span></span></td><td> <span class="comment">(Antialiased chessboard using the Lanczos algorithm, made by myself based on the source in <a href="/wiki/File:Antialiased.png">File:Antialiased.png</a>&#039;s description. This one should be relatively close to an ideal filter, primarily because I used a lot of taps (several million) for the more)</span></td></tr>
+</table>
+
+</div>
+<br /><ul>
+<li id="mw-imagepage-edit-external"><a href="/w/index.php?title=File:Antialiased-lanczos.png&amp;action=edit&amp;externaledit=true&amp;mode=file" title="File:Antialiased-lanczos.png">Edit this file using an external application</a> <small>See the <a href="http://www.mediawiki.org/wiki/Manual:External_editors" class="extiw" title="mw:Manual:External editors">setup instructions</a> for more information.</small></li>
+</ul>
+<h2 id="filelinks">File links</h2>
+<div id='mw-imagepage-section-linkstoimage'>
+<div class="linkstoimage" id="linkstoimage">The following pages on the English Wikipedia link to this file (pages on other projects are not listed):</div>
+<ul class="mw-imagepage-linkstoimage">
+<li id="mw-imagepage-linkstoimage-ns0"><a href="/wiki/Spatial_anti-aliasing" title="Spatial anti-aliasing">Spatial anti-aliasing</a></li>
+<li id="mw-imagepage-linkstoimage-ns2"><a href="/wiki/User:Multichill/Free_uploads" title="User:Multichill/Free uploads">User:Multichill/Free uploads</a></li>
+<li id="mw-imagepage-linkstoimage-ns2"><a href="/wiki/User:Multichill/Free_uploads/2011-03-19" title="User:Multichill/Free uploads/2011-03-19">User:Multichill/Free uploads/2011-03-19</a></li>
+</ul>
+</div>
+<div class="printfooter">
+Retrieved from "<a href="http://en.wikipedia.org/wiki/File:Antialiased-lanczos.png">http://en.wikipedia.org/wiki/File:Antialiased-lanczos.png</a>"</div>
+				<!-- /bodytext -->
+								<!-- catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:User-created_public_domain_images_from_February_2009" title="Category:User-created public domain images from February 2009">User-created public domain images from February 2009</a></span> | <span dir='ltr'><a href="/wiki/Category:All_user-created_public_domain_images" title="Category:All user-created public domain images">All user-created public domain images</a></span> | <span dir='ltr'><a href="/wiki/Category:Self-published_work" title="Category:Self-published work">Self-published work</a></span></div><div id="mw-hidden-catlinks" class="mw-hidden-cats-hidden">Hidden categories: <span dir='ltr'><a href="/wiki/Category:All_free_media" title="Category:All free media">All free media</a></span></div></div>				<!-- /catlinks -->
+												<div class="visualClear"></div>
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- header -->
+		<div id="mw-head" class="noprint">
+			
+<!-- 0 -->
+<div id="p-personal" class="">
+	<h5>Personal tools</h5>
+	<ul>
+					<li  id="pt-userpage"><a href="/wiki/User:Jbotnascimento" title="Your user page [.]" accesskey="." class="new">Jbotnascimento</a></li>
+					<li  id="pt-mytalk"><a href="/wiki/User_talk:Jbotnascimento" title="Your talk page [n]" accesskey="n" class="new">My talk</a></li>
+					<li  id="pt-preferences"><a href="/wiki/Special:Preferences" title="Your preferences">My preferences</a></li>
+					<li  id="pt-watchlist"><a href="/wiki/Special:Watchlist" title="The list of pages that you are monitoring for changes [l]" accesskey="l">My watchlist</a></li>
+					<li  id="pt-mycontris"><a href="/wiki/Special:Contributions/Jbotnascimento" title="List of your contributions [y]" accesskey="y">My contributions</a></li>
+					<li  id="pt-logout"><a href="/w/index.php?title=Special:UserLogout&amp;returnto=File:Antialiased-lanczos.png" title="Log out">Log out</a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+			<div id="left-navigation">
+				
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li  id="ca-nstab-image" class="selected"><span><a href="/wiki/File:Antialiased-lanczos.png"  title="View the file page [c]" accesskey="c">File</a></span></li>
+					<li  id="ca-talk" class="new"><span><a href="/w/index.php?title=File_talk:Antialiased-lanczos.png&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+			</div>
+			<div id="right-navigation">
+				
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="/wiki/File:Antialiased-lanczos.png" >Read</a></span></li>
+					<li id="ca-edit"><span><a href="/w/index.php?title=File:Antialiased-lanczos.png&amp;action=edit"  title="You can edit this page. &#10;Please use the preview button before saving. [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible "><span><a href="/w/index.php?title=File:Antialiased-lanczos.png&amp;action=history"  title="Past versions of this page [h]" accesskey="h">View history</a></span></li>
+					<li id="ca-watch" class="icon"><span><a href="/w/index.php?title=File:Antialiased-lanczos.png&amp;action=watch"  title="Add this page to your watchlist [w]" accesskey="w">Watch</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="/w/index.php" id="searchform">
+		<input type='hidden' name="title" value="Special:Search"/>
+				<div id="simpleSearch">
+						<input id="searchInput" name="search" type="text"  title="Search Wikipedia [f]" accesskey="f"  value="" />
+						<button id="searchButton" type='submit' name='button'  title="Search Wikipedia for this text"><img src="http://bits.wikimedia.org/skins-1.17/vector/images/search-ltr.png?301-2" alt="Search" /></button>
+					</div>
+			</form>
+</div>
+
+<!-- /2 -->
+			</div>
+		</div>
+		<!-- /header -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(http://upload.wikimedia.org/wikipedia/en/b/bc/Wiki.png);" href="/wiki/Main_Page"  title="Visit the main page"></a></div>
+				<!-- /logo -->
+				
+<!-- navigation -->
+<div class="portal" id='p-navigation'>
+	<h5>Navigation</h5>
+	<div class="body">
+				<ul>
+					<li id="n-mainpage-description"><a href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+					<li id="n-contents"><a href="/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li>
+					<li id="n-featuredcontent"><a href="/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li>
+					<li id="n-currentevents"><a href="/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
+					<li id="n-randompage"><a href="/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li>
+					<li id="n-sitesupport"><a href="http://wikimediafoundation.org/wiki/Special:Landingcheck?landing_page=WMFJA085&amp;language=en&amp;utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=20101204SB002" title="Support us">Donate to Wikipedia</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /navigation -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- interaction -->
+<div class="portal" id='p-interaction'>
+	<h5>Interaction</h5>
+	<div class="body">
+				<ul>
+					<li id="n-help"><a href="/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li>
+					<li id="n-aboutsite"><a href="/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li>
+					<li id="n-portal"><a href="/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+					<li id="n-recentchanges"><a href="/wiki/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+					<li id="n-contact"><a href="/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia">Contact Wikipedia</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /interaction -->
+
+<!-- TOOLBOX -->
+<div class="portal" id="p-tb">
+	<h5>Toolbox</h5>
+	<div class="body">
+		<ul>
+					<li id="t-whatlinkshere"><a href="/wiki/Special:WhatLinksHere/File:Antialiased-lanczos.png" title="List of all English Wikipedia pages containing links to this page [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/File:Antialiased-lanczos.png" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+																																					<li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
+											<li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="/w/index.php?title=File:Antialiased-lanczos.png&amp;oldid=419647497" title="Permanent link to this revision of the page">Permanent link</a></li>
+						</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+
+<!-- /LANGUAGES -->
+			</div>
+		<!-- /panel -->
+		<!-- footer -->
+		<div id="footer">
+											<ul id="footer-info">
+																	<li id="footer-info-lastmod"> This page was last modified on 19 March 2011 at 16:43.<br /></li>
+																							<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+additional terms may apply.
+See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.<br/>
+Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.<br /></li><li class="noprint"><a class='internal' href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact us</a></li>
+															</ul>
+															<ul id="footer-places">
+																	<li id="footer-places-privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+																							<li id="footer-places-disclaimer"><a href="/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+															</ul>
+											<ul id="footer-icons" class="noprint">
+					<li id="footer-copyrightico">
+						<a href="http://wikimediafoundation.org/"><img src="/images/wikimedia-button.png" width="88" height="31" alt="Wikimedia Foundation"/></a>
+					</li>
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://bits.wikimedia.org/skins-1.17/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<!-- /footer -->
+		
+<script src="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector" type="text/javascript"></script>
+<script type="text/javascript">if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "File", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 6, "wgPageName": "File:Antialiased-lanczos.png", "wgTitle": "Antialiased-lanczos.png", "wgAction": "view", "wgArticleId": 20818297, "wgIsArticle": true, "wgUserName": "Jbotnascimento", "wgUserGroups": ["*", "user"], "wgCurRevisionId": 419647497, "wgCategories": ["User-created public domain images from February 2009", "All user-created public domain images", "Self-published work", "All free media"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgRestrictionUpload": [], "wgSearchNamespaces": [0], "wgFlaggedRevsParams": {"tags": {"status": {"levels": 1, "quality": 2, "pristine": 3}}}, "wgStableRevisionId": null, "wgRevContents": {"error": "Unable to get content.", "waiting": "Waiting for content"}, "wgWikimediaMobileUrl": "http://en.m.wikipedia.org/wiki", "wgGlobalGroups": [], "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": true, "expandablesearch": false, "footercleanup": false, "sectioneditlinks": false, "simplesearch": true, "experiments": true}, "wgWikiEditorEnabledModules": {"toolbar": true, "dialogs": true, "templateEditor": false, "templates": false, "addMediaWizard": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgTrackingToken": "cb4a7c3532b9a7e6be076d94c46e279b", "Geo": {"city": "", "country": ""}, "wgNoticeProject": "wikipedia"});
+}
+</script>
+<script type="text/javascript">if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.legacy.wikibits", "mediawiki.util", "mediawiki.legacy.ajax", "mediawiki.legacy.ajaxwatch", "mediawiki.legacy.mwsuggest", "ext.vector.collapsibleNav", "ext.vector.collapsibleTabs", "ext.vector.editWarning", "ext.vector.simpleSearch", "ext.articleFeedback.startup"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script src="/w/index.php?title=Special:BannerController&amp;cache=/cn.js&amp;301-2" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector" type="text/javascript"></script>
+<script type="text/javascript">if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":"1","rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":4,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":0,"watchdeletion":0,
+	"watchlistdays":"3","watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"flaggedrevssimpleui":1,"flaggedrevsstable":false,"flaggedrevseditdiffs":true,"flaggedrevsviewdiffs":false,"vector-simplesearch":1,"useeditwarning":1,"vector-collapsiblenav":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":false,"searchNs101":false,"searchNs108":false,"searchNs109":false});;mediaWiki.loader.state({"user.options":"ready"});
+	
+	/* cache key: enwiki:resourceloader:filter:minify-js:5:3934299d7754970b87209c6e6808e01a */
+}
+</script><script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- fixalpha -->
+		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
+		<!-- /fixalpha -->
+		<!-- Served by srv236 in 0.322 secs. -->			</body>
+</html>

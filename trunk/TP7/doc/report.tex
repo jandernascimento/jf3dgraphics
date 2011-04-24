@@ -25,17 +25,23 @@
 aliasing effects. Will the deformation of the sea surface due to waves
 increase or tend to hide these visual problems?}
 
-The horizon that should be displayed in this scenario may produce
-aliasing: due to the procedural modeling (high definition) displayed in
-a regular sampling \cite{iaow}, in this case the aliasing in produced
-because the regular sampling generates another frequency inside the
-image. Or due to the fact that looking for a mesh in long distances, the
-mesh is displayed as a single color pixel, instead of interpolation of
-the colors. 
+The aliasing effect happens when we try to sample a high resolution image\cite{iaow}, in case of long distance representation, due to the render limitation we cannot represent the detaild image, to overcome this issue a sampling is done to render far away cenarios, but sampling selects certain pixels for displaying, thus the representation becomes innacurate since a long distance pixels should be in matter of fact a composition (interpolation) of its neighbors.
 
-The waves representations may increase the visual problems since a it
-represents more details to be represented in a single pixel, and a
-single pixel is uncapable of carry such information. 
+In the Figure \ref{fig:aliasing} is shown one example of aliasing effect in long distances representation.
+
+\begin{figure}[H]
+		  \centering
+		  \subfloat[Sampled image]{\includegraphics[width=0.4\textwidth]{image/alias01.png}\label{fig:sampled}}
+		  \hspace{0.1cm}
+		  \subfloat[Anti-aliased image]{\includegraphics[width=0.4\textwidth]{image/alias02.png}\label{fig:antialiased}}
+		  \caption{Aliasing effect}
+		  \label{fig:aliasing}
+\end{figure}
+
+In the Figure \ref{fig:aliasing}, we are using a chessboard pattern as the texture for the ground, in the Figure \ref{fig:sampled} we can see that further the square is, less the aesthetically appealing is preserved, the square start to acquire a incorrect shape. In the \ref{fig:antialiased} is possible to see the result of interpolation as anti-aliasing technique.	
+
+Although, the waves representations may reduce the aliasing effect due to the pseudorandom representation of the sea surface, since the wave format are not strictly a regular pattern, the aliasing is cannot be easily detected. 
+
 
 \section{Question 2}
 
