@@ -21,21 +21,62 @@
 
 \section{Question 1}
 
-\emph{Explain why rendering such a scene is very likely to produce aliasing effects. Will the
-deformation of the sea surface due to waves increase or tend to hide these visual problems?}
+\emph{Explain why rendering such a scene is very likely to produce
+aliasing effects. Will the deformation of the sea surface due to waves
+increase or tend to hide these visual problems?}
 
-The horizon that should be displayed in this scenario may produce aliasing: due to the procedural modeling (high definition) displayed in a regular sampling \cite{iaow}, in this case the aliasing in produced because the regular sampling generates another frequency inside the image. Or due to the fact that looking for a mesh in long distances, the mesh is displayed as a single color pixel, instead of interpolation of the colors. 
+The horizon that should be displayed in this scenario may produce
+aliasing: due to the procedural modeling (high definition) displayed in
+a regular sampling \cite{iaow}, in this case the aliasing in produced
+because the regular sampling generates another frequency inside the
+image. Or due to the fact that looking for a mesh in long distances, the
+mesh is displayed as a single color pixel, instead of interpolation of
+the colors. 
 
-The waves representations may increase the visual problems since a it represents more details to be represented in a single pixel, and a single pixel is uncapable of carry such information. 
+The waves representations may increase the visual problems since a it
+represents more details to be represented in a single pixel, and a
+single pixel is uncapable of carry such information. 
 
 \section{Question 2}
 
-\emph{A first idea for modeling the sea surface is to represent it by an initially flat mesh, whose
-vertices will be displaced on the vertical axis using z=Height(x,y,t). Two possible flat
-quadrangular meshes are considered: a regular 2D grid and a grid computed by projecting the
-pixels of the screen onto the horizontal plane of the sea, along the viewing direction (so the
-mesh changes each time the camera moves). Which of these representations would you use
-and why?}
+\emph{A first idea for modeling the sea surface is to represent it by an
+initially flat mesh, whose vertices will be displaced on the vertical
+axis using z=Height(x,y,t). Two possible flat quadrangular meshes are
+considered: a regular 2D grid and a grid computed by projecting the
+pixels of the screen onto the horizontal plane of the sea, along the
+viewing direction (so the mesh changes each time the camera moves).
+Which of these representations would you use and why?}
+
+The second variant of a grid is more efficient and produces better
+results than a regular 2D grid. The reasons for that are the following:
+
+\begin{itemize}
+
+  \item We can move a camera over the sea surface maintaining an
+    adequate resolution. As the grid is re-calculated with each move of
+    the camera, zooming in and out is now possible with an acceptable
+    resolution. Plus, the waves animation hides this shift in sampling
+    locations (which are the vertices of the projected quads).
+    
+  \item A concentration on the particular part of the sea is now
+    possible. By simply increasing the number of the projected quads in
+    the bottom of the screen we can add details in the foreground of the
+    scene. At the same time, the reduced number of quads on the top of
+    the screen says that we don't care much about the scene detalization
+    near the horizon.
+    
+  \item Since the resolution depends on the size of the screen's quads,
+    the waves that are smaller than the quads are not displayed. This
+    fact increases performance reducing the computational time, as we
+    work with smaller number of sampling locations.
+
+\end{itemize}
+
+As a result of using a dynamically recomputed grid, the number of
+displayed waves is constant, since the more waves will be displayed in the
+area of interest and less - in the neglected area. This fact, plus the
+maintenance of an adequate resolution while moving a camera make such
+technique preferable over a regular 2D grid.
 
 \section{Question 3}
 
