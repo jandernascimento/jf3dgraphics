@@ -27,9 +27,9 @@
 aliasing effects. Will the deformation of the sea surface due to waves
 increase or tend to hide these visual problems?}
 
-The aliasing effect happens when we try to sample a high resolution image\cite{iaow}, in case of long distance representation, due to the render limitation we cannot represent the detailed image, to overcome this issue a sampling is done to render far away scenarios, but sampling selects certain pixels for displaying, thus the representation becomes inaccurate since a long distance pixels should be in matter of fact a composition (interpolation) of its neighbors.
+The aliasing effect happens when we try to render a high resolution image\cite{iaow}. Due to the render limitation we cannot represent the details of image in long distances. To overcome this issue a sampling is performed. As sampling selects certain pixels for displaying, the representation becomes inaccurate. The proper rendering of long distance pixels should be a composition (interpolation) of its neighbors.
 
-In the Figure \ref{fig:aliasing} is shown one example of aliasing effect in long distances representation.
+In the Figure \ref{fig:aliasing} shows one example of aliasing effect in long distances representation.
 
 \begin{figure}[H]
 		  \centering
@@ -40,9 +40,9 @@ In the Figure \ref{fig:aliasing} is shown one example of aliasing effect in long
 		  \label{fig:aliasing}
 \end{figure}
 
-In the Figure \ref{fig:aliasing}, we are using a chessboard pattern as the texture for the ground, in the Figure \ref{fig:sampled} we can see that further the square is, less the aesthetically appealing is preserved, the square start to acquire a incorrect shape. In the \ref{fig:antialiased} is possible to see the result of interpolation as anti-aliasing technique.	
+In the Figure \ref{fig:aliasing}, we are using a chessboard pattern as the texture for the ground. On the right handside we can see: the further the square is the more it acquires an incorrect shape. In the \ref{fig:antialiased} it is possible to see the result of an interpolation as anti-aliasing technique.	
 
-Although, the waves representations may reduce the aliasing effect due to the pseudo-random representation of the sea surface, since the wave format are not strictly a regular pattern, the aliasing is cannot be easily detected. 
+An example with waves may reduce the aliasing effect due to the pseudo-random representation of the sea surface. The aliasing cannot be easily detected since the waves format is not strictly a regular pattern.
 
 
 \section{Question 2}
@@ -56,18 +56,18 @@ viewing direction (so the mesh changes each time the camera moves).
 Which of these representations would you use and why?}\\
 
 The second variant of a grid is more efficient and produces better
-results than a regular 2D grid. The reasons for that are the following:
+results than a regular 2D grid. The reasons for that are the following\cite{iaow}:
 
 \begin{itemize}
 
   \item We can move a camera over the sea surface maintaining an
-    adequate resolution. As the grid is recalculated with each move of
+    adequate resolution. As the grid is recalculated with each movement of
     the camera, zooming in and out is now possible with an acceptable
-    resolution. Plus, the waves animation hides this shift in sampling
+    resolution. Moreover, the waves animation hides the shift of sampling
     locations (which are the vertices of the projected quads).
 
   \item A concentration on the particular part of the sea is now
-    possible. By simply increasing the number of the projected quads in
+    possible. By increasing the number of the projected quads in
     the bottom of the screen we can add details in the foreground of the
     scene. At the same time, the reduced number of quads on the top of
     the screen says that we don't care much about the scene details
@@ -82,7 +82,7 @@ results than a regular 2D grid. The reasons for that are the following:
 
 As a result of using a dynamically recomputed grid, the number of
 displayed waves is constant, since the more waves will be displayed in the
-area of interest and less --- in the neglected area. This fact, plus the
+area of interest, and less --- in the neglected area. This fact, plus the
 maintenance of an adequate resolution while moving a camera make such
 technique preferable over a regular 2D grid.
 
@@ -95,16 +95,16 @@ figure. Can you adapt this algorithm to model specular reflections while
 getting real-time performances?}
 
 Assuming that we do not have a powerful machine to render the sea
-surface at each moment of time, the ray-tracing algorithm is not
+surface at each timestep, the ray-tracing algorithm is not
 suitable, as it requires a lot of CPU computations. Hence, we will
 consider a texture mapping algorithm to render the sea surface as a less
 costly alternative to ray-tracing. Having a texture map of the sea
 surface and a procedural equation of its geometry, the mapping from
 object coordinates to texture map coordinated is fairly simple. 
 
-As a particular algorithm to render our scene we have chosen The Fresnel
-Texture Mapping Algorithm. This algorithm is based on the Fresnel's law
-of reflection which simply states that when the ray of light strikes the
+As a particular algorithm for rendering our scene we have chosen the Fresnel
+Texture Mapping algorithm\cite{fresnel}. This algorithm is based on the Fresnel's law
+of reflection which states that when the ray of light strikes the
 sea surface at the angle less than 90 degrees, it is refracted as well
 as reflected. Knowing this fact now we have to store two texture maps:
 one for reflective information and the other for refractive information.
@@ -126,7 +126,7 @@ reflection ($\Theta_1$) and refraction($\Theta_2$):
 Substitution of this values into the Fresnel's formula gives us the
 percentage of light reflected from the water. We can now use this
 percentage to put weights into the reflective texture map information
-(refractive texture map information is complement). Thus, the color
+(refractive and refractive texture maps information). Thus, the color
 information for the point can be written as:
 
 \begin{equation}
@@ -134,10 +134,10 @@ information for the point can be written as:
   (1-I)\cdot(R_{refr},G_{refr},B_{refr})
 \end{equation}
 
-where $(R_f,G_f,B_f)$ is the final color triplet for the color,
+Where $(R_f,G_f,B_f)$ is the final color triplet,
 $(R_{refl},G_{refl},B_{refl})$ is the color triplet from the reflective
 texture map and $(R_{refr},G_{refr},B_{refr})$ --- from the refractive
-texture map 
+texture map. 
 
 \section{Question 4}
 
@@ -149,42 +149,38 @@ How would you animate and render the foam? Give the animation model
 would you use, and describe the geometric primitive or the texture it
 should control, and discuss its rendering.}
 
-This can me achieved using the procedure based modeling, and follow two steps: choose a the geometric primitive that generate the foam, and the use a technique for the foam dynamics (flow). 
+The foam creation can be achieved using the procedure-based modeling, following the two steps: choose a geometric primitive that generates foam, and use a technique for the foam dynamics.
 
-Easiest way to render the foam is to use spheres, changing the collision
-algorithm so they can be displayed as a set of spheres, create foam
-texture and apply it to the mesh and place it over a certain height,
-giving the volume aspect.  But as this looks unrealistic since if a
-transparency is added to the foam, the intersection between singular
-bubbles are not natural. 
+The easiest way to render foam is to use spheres, changing the collision
+algorithm, so they can be displayed overlapped. The next step is to create foam
+texture, apply it to the spheres, and place it over a certain height,
+introducing the volume aspect.  Although this looks unrealistic since if 
+transparency is added to the foam, the intersections between spheres are not natural. 
 
-A more sophisticated method to render the foam is to use Boundary Integral Method to simulate the foam dynamics\cite{bim}. In the figure \ref{fig:dim-foam} we can see an example of a foam generated by this method.
+Another alternative method to render foam is to use the Boundary Integral Method (BIM) to simulate foam dynamics\cite{bim}. The figure \ref{fig:dim-foam} shows an example of foam which was generated by this method.
 
 \begin{figure}[H] \centering
   \includegraphics[width=0.4\textwidth]{image/dim01.png} \caption{Foam
   rendered by Boundary Integral Method} \label{fig:dim-foam}
 \end{figure}
 
-The transparency is an important aspect of the foam. The transparency
-can be calculated\cite{nvidia} according to the Equation
-\ref{equa:transparency}, and apply the acquired value to the geometric
+Transparency is an important aspect of the foam. It can be calculated\cite{nvidia} according to the equation
+\ref{equa:transparency}, and applied to the geometric
 primitive used for the foam representation.
 
 \begin{equation} alpha=saturate(\frac{H-H_0}{H_{max} - H_0})
   \label{equa:transparency} \end{equation}
 
-We can combine the texture with the BIM way of modeling the foam. Apply
-the texture for further visualization. Since the eye sees a mixed
-between the colors in long distances, it is possible to apply the
-texture for saving processing and reduce the aliasing effect.  For a
-detailed visualization we render the geometric primitive modeled with
+We can combine the texture with the BIM modeling the foam. We apply
+the texture for the further visualization. Since the human eyes sees an interpolation
+between the colors in the long distances, it is possible to apply the
+texture for saving computation and reduce the aliasing effect.  For a
+detailed visualization we render the geometric primitive with
 BIM for the foam.
 
-The foam flow can be computed using two techniques from dynamical fields (fluid dynamics): surface elevation and potential velocity.
-
-The dynamic aspect of the foam can be modeled using physically based particle. The particle should respect the gravity, and wind forces until the shore. Based on the elevation of the waves crest defines the speed of the foam. Is possible to use the Gestners model, as in this model we are aware of the wave trajectory, we can follow trajectory and set the very same path for the foam, applying some dispersion to it\cite{iaow}.
+The dynamic aspect of the foam can be modeled using physically based animation. The particle should behave in respect to the gravity, and wind forces till the shore. The elevation of the waves crest defines the speed of the foam. It is possible to use the Gestner's model, as in this model we are aware of the wave trajectory. We can follow trajectory and set the very same path for the foam, applying some dispersion to it\cite{iaow}.
 The environment conditions for the foam is that the waves must be sufficiently high enough to break and produce the foam(slope greater than 1/6 \cite{sow} of the height of the wave).
-When the foam reaches the beach, it should disappear. Removing the particles from outer to the inner layer, simulating the bubble bursted by the wind, since the inner ones are protected the outer bubbles, they tend to burst more easily.
+When the foam reaches the beach, it should disappear. We can simulate the burst of the bubble by the wind, removing layer by layer starting from the top.
 
 
 \begin{thebibliography}{9}
@@ -193,6 +189,12 @@ When the foam reaches the beach, it should disappear. Removing the particles fro
     Simulating Ocean Water,
     TESSENDORF, Jerry.
     2001
+
+  \bibitem{fresnel}
+    Modeling and Rendering Waves: Wave-Tracing using Beta-Splines and Reflective and Refractive Texture Mapping,
+    PAULINE Y. TS'O and BRIAN A. BARSKY.
+    University of California, Berkeley.
+    1987.
 
   \bibitem{iaow}
     Interactive Animation of Ocean Waves,
