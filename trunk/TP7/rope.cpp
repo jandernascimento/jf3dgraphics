@@ -1,7 +1,5 @@
-#include <iostream>
-#include <cmath> 
 
-#include "dynamics.h"
+#include "rope.h"
 #include "sphere.h"
 #include "viewer.h"
 #include "triangle.h"
@@ -9,16 +7,9 @@
 using namespace std;
 using namespace qglviewer;
 
-// some constants that can be used for springs
-float stiffness = 30.0f;
-float initLength = 0.2f;
-float damping = 0.2f;
-float viscosity = 0.1f;
-
-
 // Affichage openGL de l'objet
 //
-void Dynamics::draw() const
+void Rope::draw() const
 {
 	Node::draw();
 
@@ -29,7 +20,7 @@ void Dynamics::draw() const
 
 	// draw spring elements
 	int nbSprings = getNbSprings();
-	glLineWidth(15);
+	glLineWidth(10);
 	glBegin(GL_LINES);
 	glColor3f(1.0, 0.0, 0.0);
 	for (int i=0 ; i<nbSprings ; i++){
@@ -50,7 +41,7 @@ void Dynamics::draw() const
 
 // Parse the XML File
 //
-void Dynamics::initFromDOMElement(const QDomElement& e)
+void Rope::initFromDOMElement(const QDomElement& e)
 {
 	// init the object part
 	Object::initFromDOMElement(e);
@@ -61,14 +52,20 @@ void Dynamics::initFromDOMElement(const QDomElement& e)
 	// Parse for Ground position
 	groundPosition = Vec(e.attribute("pos_x", "0.0").toFloat(), e.attribute("pos_y", "0.0").toFloat(), e.attribute("pos_z", "-4.0").toFloat());
 
+	qDebug("Initial edge of the rope: p1(%f,%f,%f)\n",groundPosition.x,groundPosition.y,groundPosition.z);
+	
+	ropeAttachedPosition = Vec(e.attribute("att_x", "-10.0").toFloat(), e.attribute("att_y", "-10.0").toFloat(), e.attribute("att_z", "0.0").toFloat());
+
+	qDebug("Attached side of the rope: p2(%f,%f,%f)\n",ropeAttachedPosition.x,ropeAttachedPosition.y,ropeAttachedPosition.z);
+
 	// default material
 	Material mat;
 	mat.setDiffuseColor(Color(0.9,0.1,0.1));
 	setMaterial(mat);
 
 	Vec initPos (0.0, 0.0, 0.0);
-	float mass = 1.0f;
-	float radius = 0.25f;
+	float mass = 0.30f;
+	float radius = 0.01f;
 	
 	// Create the manipulated ball: a special ball controllable with the mouse
 	unsigned int ball1 = addBall(initPos, Vec(), 0.0, radius);
@@ -81,9 +78,9 @@ void Dynamics::initFromDOMElement(const QDomElement& e)
 	drawing_sphere[0]->setFrame(f);
 	
 	// add a second ball
-	Vec position  = initPos + Vec(0.0f, -2.0f*radius, 0.0f);
-	Vec position2  = position + Vec(0.0f, -2.0f*radius, 0.0f);
-	unsigned int ball2 = addBall(position, Vec(0.0f, 1.0f, 0.0f), mass, radius);
+	//Vec position  = initPos + Vec(0.0f, -2.0f*radius, 0.0f);
+	//Vec position2  = position + Vec(0.0f, -2.0f*radius, 0.0f);
+	//unsigned int ball2 = addBall(position, Vec(0.0f, 1.0f, 0.0f), mass, radius);
 	//unsigned int ball3 = addBall(position2, Vec(0.0f, 0.5f, 1.0f), mass, radius);
 
 	// add 2 triangles to represent the ground plane (for collisions)
@@ -98,15 +95,31 @@ void Dynamics::initFromDOMElement(const QDomElement& e)
 	t2->setMaterial(mat);
 
 	addObject(t1); addObject(t2);
-  
-  	addSpring(0, 1, stiffness, initLength, damping);
+ 
+	/** multiple balls **/
+	Vec position  = initPos;// + Vec(0.0f, -2.0f*radius, 0.0f);
+
+	int nbOfAttachedSpheres=10;
+	
+	for(int x=0;x<nbOfAttachedSpheres;x++){
+		position  = position + Vec(0.0f, -1.5f*radius, 0.0f);
+		unsigned int ballid=addBall(position, Vec(0.0f, -0.8f, 0.0f), mass, radius);
+    if((x+1)<nbOfAttachedSpheres)
+      addSpring(x, x+1, stiffness, initLength, damping);
+    mass -= 0.02;
+	}
+ 
+	unsigned int lastThreadArrachedID = addBall(ropeAttachedPosition, Vec(), 0.0, radius);
+	addSpring(nbOfAttachedSpheres-1, lastThreadArrachedID, stiffness, initLength, damping);
+	
+	//addSpring(0, 1, stiffness, initLength, damping);
 }
 
 /////////////////////////
 // accessors
 /////////////////////////
 
-unsigned int Dynamics::addBall(const Vec& ballPos, const Vec& velocity, float mass, float radius)
+unsigned int Rope::addBall(const Vec& ballPos, const Vec& velocity, float mass, float radius)
 {
         // add a sphere in Node List as drawing primitive
         Sphere* sphere = new Sphere();
@@ -131,13 +144,16 @@ unsigned int Dynamics::addBall(const Vec& ballPos, const Vec& velocity, float ma
 	return (unsigned int) positions.size()-1;
 }
 
-unsigned int Dynamics::addSpring(unsigned int ball1, unsigned  int ball2, float stiffness, float initLength, float dampingFactor)
+unsigned int Rope::addSpring(unsigned int ball1, unsigned  int ball2, float stiffness, float initLength, float dampingFactor)
 {
+  //printf("Stiffness = %f", stiffness);
+
+
 	springs.push_back(Spring(ball1, ball2, stiffness, initLength, dampingFactor));
 	return (unsigned int) springs.size();
 }
 
-void Dynamics::setGravity(const Vec& grav)
+void Rope::setGravity(const Vec& grav)
 {
 	gravity = grav;
 }
@@ -147,7 +163,7 @@ void Dynamics::setGravity(const Vec& grav)
 // methods
 /////////////////////////
 
-void Dynamics::animate(float t)
+void Rope::animate(float t)
 {
 
         // for this class, use the dt in the configuration file as
@@ -219,7 +235,7 @@ void Dynamics::animate(float t)
 
 
 
-void Dynamics::collisionBallPlane(Vec& x1, Vec& v1, float r1, float invm1,
+void Rope::collisionBallPlane(Vec& x1, Vec& v1, float r1, float invm1,
                                   Vec& x2, Vec& v2, Vec& normal, float invm2, float rebound )
 {
 	// don't process fixed objects :
@@ -251,11 +267,11 @@ void Dynamics::collisionBallPlane(Vec& x1, Vec& v1, float r1, float invm1,
 }
 
 
-void Dynamics::collisionBallBall(Vec& x1, Vec& v1, float r1, float invm1,
+void Rope::collisionBallBall(Vec& x1, Vec& v1, float r1, float invm1,
                                  Vec& x2, Vec& v2, float r2, float invm2,
                                  float rebound )
 {
-
+/*
 	// don't process fixed objects :
 	if( invm1==0 && invm2==0 ) 
 		return;
@@ -290,7 +306,7 @@ void Dynamics::collisionBallBall(Vec& x1, Vec& v1, float r1, float invm1,
 	x2 = x2 + (corr2 * penetration) * normal;
 	v2 = v2 + (corr2 * vpen) * normal;		
 
-
+*/
  // Q_UNUSED(x1); Q_UNUSED(v1); Q_UNUSED(r1); Q_UNUSED(invm1);
  // Q_UNUSED(x2); Q_UNUSED(v2); Q_UNUSED(r2); Q_UNUSED(invm2);
  // Q_UNUSED(rebound);
