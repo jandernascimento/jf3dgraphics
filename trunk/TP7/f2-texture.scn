@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene>
+	<!--Draw a cube without front-face, to simulate the sea (the deep-sea diver and animations should be inside this cube in the scene)-->
+	<!--each face of the cube should be put inside a tag PlanTexture. Don't put inside the tag Node-->
+	<!--the filename is the texture you want in that face in your scene (should be bmp, 24 bits)-->
+	<!--index is incremental. Is the number of that face-->
+	<!--the order of the vertices should be like in the example (first bottomleft, after bottomright, etc)-->
+	<!--the tag Camera in the end of the file should be configured too(position and orientation). In this example, the camera is configured properly-->	
+	
+
+	<!--Left Face-->
+	<PlanTexture
+	 index="1"
+  	 filepathname="img/turtle.bmp" 
+  	 bottomleft_x="-1.0" bottomleft_y="-1.0" bottomleft_z="-1.0"
+   	 bottomright_x="-2.0" bottomright_y="1.0" bottomright_z="-1.0"
+   	 topright_x="-2.0" topright_y="1.0" topright_z="1.0"
+   	 topleft_x="-1.0" topleft_y="-1.0" topleft_z="1.0">
+	</PlanTexture> 
+	<!--Right face-->
+	<PlanTexture
+	 index="2"
+  	 filepathname="img/turtle2.bmp" 
+  	 bottomleft_x="1.0" bottomleft_y="-1.0" bottomleft_z="-1.0"
+   	 bottomright_x="2.0" bottomright_y="1.0" bottomright_z="-1.0"
+   	 topright_x="2.0" topright_y="1.0" topright_z="1.0"
+   	 topleft_x="1.0" topleft_y="-1.0" topleft_z="1.0">
+	</PlanTexture> 
+    <!--Top Face-->
+	<PlanTexture  
+     index="3"
+  	 filepathname="img/benthic_zone_1.bmp" 
+  	 bottomleft_x="-1.0" bottomleft_y="-1.0" bottomleft_z="1.0"
+   	 bottomright_x="1.0" bottomright_y="-1.0" bottomright_z="1.0"
+   	 topright_x="2.0" topright_y="1.0" topright_z="1.0"
+   	 topleft_x="-2.0" topleft_y="1.0" topleft_z="1.0">
+    </PlanTexture> 
+	<!--Bottom Face-->
+    <PlanTexture
+     index="4"
+  	 filepathname="img/mud.bmp" 
+  	 bottomleft_x="-1.0" bottomleft_y="-1.0" bottomleft_z="-1.0"
+   	 bottomright_x="1.0" bottomright_y="-1.0" bottomright_z="-1.0"
+   	 topright_x="2.0" topright_y="1.0" topright_z="-1.0"
+   	 topleft_x="-2.0" topleft_y="1.0" topleft_z="-1.0">
+    </PlanTexture>
+    <!--Back Face--> 
+    <PlanTexture
+     index="5"
+  	 filepathname="img/seabedTexture.bmp" 
+  	 bottomleft_x="-2.0" bottomleft_y="1.0" bottomleft_z="-1.0"
+   	 bottomright_x="2.0" bottomright_y="1.0" bottomright_z="-1.0"
+   	 topright_x="2.0" topright_y="1.0" topright_z="1.0"
+   	 topleft_x="-2.0" topleft_y="1.0" topleft_z="1.0">
+	</PlanTexture>  
+	
+  <Node>
+	<Sphere radius="0.1">
+  	  <Material>
+        <DiffuseColor red="0.1" green="0.1" blue="0.9" />
+        <SpecularColor red="0.6" green="0.6" blue="0.8" exponent="16" />
+        <ReflectiveColor red="0.4" green="0.4" blue="0.8" />
+      </Material>
+      <Frame>
+        <position x="0.0" y="0.0" z="0.0" />
+        <orientation q0="0.0" q1="0.0" q2="0.0" q3="1.0" />
+      </Frame>
+    </Sphere>
+  </Node>
+
+  <Camera fieldOfView="1.1854" xResolution="400" yResolution="400">
+    <Frame>
+      <position x="0.0242419" y="-1.62182" z="-0.254824" />
+      <orientation q0="0.739561" q1="0.00127024" q2="0.000102237" q3="0.673088" />
+    </Frame>
+  </Camera>
+  
+  <AmbientLight>
+    <Color red="0.1" green="0.1" blue="0.1" />
+  </AmbientLight>
+  
+  <DirectionalLight>
+    <Direction x="0.0" y="1.0" z="0.0" />
+    <Position x="0.0" y="0.0" z="0.0" />
+    <Color red="0.1" green="0.1" blue="0.1" />
+  </DirectionalLight>
+
+  <PointLight>
+    <Position x="0.0" y="0.0" z="0.0" />
+    <Color red="0.7" green="0.7" blue="0.7" />
+  </PointLight>
+
+</Scene>
