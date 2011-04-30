@@ -63,7 +63,7 @@ void Rope::initFromDOMElement(const QDomElement& e)
 	mat.setDiffuseColor(Color(0.9,0.1,0.1));
 	setMaterial(mat);
 
-	Vec initPos (0.0, 0.0, 0.0);
+	Vec initPos = groundPosition; //(0.0, 0.0, 0.0);
 	float mass = 0.30f;
 	float radius = 0.01f;
 	
@@ -76,20 +76,14 @@ void Rope::initFromDOMElement(const QDomElement& e)
 	f.setReferenceFrame(&_manipulated_frame);
 	Viewer::getViewer()->setManipulatedFrame(&_manipulated_frame);
 	drawing_sphere[0]->setFrame(f);
-	
-	// add a second ball
-	//Vec position  = initPos + Vec(0.0f, -2.0f*radius, 0.0f);
-	//Vec position2  = position + Vec(0.0f, -2.0f*radius, 0.0f);
-	//unsigned int ball2 = addBall(position, Vec(0.0f, 1.0f, 0.0f), mass, radius);
-	//unsigned int ball3 = addBall(position2, Vec(0.0f, 0.5f, 1.0f), mass, radius);
 
+/*
 	// add 2 triangles to represent the ground plane (for collisions)
 	Vec a = groundPosition + Vec(-10.0f, 10.0f, 0.0f);
 	Vec b = groundPosition + Vec( 10.0f, 10.0f, 0.0f);
 	Vec c = groundPosition + Vec( 10.0f, -10.0f, 0.0f);
 	Vec d = groundPosition + Vec(-10.0f, -10.0f, 0.0f);
 
-/*
 
 	Triangle *t1=new Triangle(a,b,d);
 	t1->setMaterial(mat);
@@ -148,8 +142,6 @@ unsigned int Rope::addBall(const Vec& ballPos, const Vec& velocity, float mass, 
 
 unsigned int Rope::addSpring(unsigned int ball1, unsigned  int ball2, float stiffness, float initLength, float dampingFactor)
 {
-  //printf("Stiffness = %f", stiffness);
-
 
 	springs.push_back(Spring(ball1, ball2, stiffness, initLength, dampingFactor));
 	return (unsigned int) springs.size();
@@ -167,10 +159,6 @@ void Rope::setGravity(const Vec& grav)
 
 void Rope::animate(float t)
 {
-
-        // for this class, use the dt in the configuration file as
-        // integration step (fixed)
-        Q_UNUSED(t);
 
 	////////////////////
 	// Force computations
@@ -223,10 +211,7 @@ void Rope::animate(float t)
 	// Collisions :
 	//
 	for(unsigned int i=0; i<nbBalls; ++i ){
-//		// avec le sol
 		//collisionBallPlane(positions[i], velocities[i], radiuses[i], invMasses[i], groundPosition, groundVelocity, groundNormal, 0.0f, 0.5f);
-		//collisionBallBall(Vec& x1, Vec& v1, float r1, float invm1,Vec& x2, Vec& v2, float r2, float invm2,float rebound )
-		//collisionBallBall(x1,v1,r1,invm1,x2,v2,r2,invm2,rebound )
 		for(unsigned int j=i+1; j<nbBalls; ++j ){
 			collisionBallBall(positions[i], velocities[i], radiuses[i], invMasses[i], positions[j], velocities[j], radiuses[j], invMasses[j], 0.5f);
 		}
@@ -272,7 +257,7 @@ void Rope::collisionBallBall(Vec& x1, Vec& v1, float r1, float invm1,
                                  Vec& x2, Vec& v2, float r2, float invm2,
                                  float rebound )
 {
-/*
+
 	// don't process fixed objects :
 	if( invm1==0 && invm2==0 ) 
 		return;
@@ -306,9 +291,4 @@ void Rope::collisionBallBall(Vec& x1, Vec& v1, float r1, float invm1,
 	v1 = v1 - (corr1 * vpen) * normal;
 	x2 = x2 + (corr2 * penetration) * normal;
 	v2 = v2 + (corr2 * vpen) * normal;		
-
-*/
- // Q_UNUSED(x1); Q_UNUSED(v1); Q_UNUSED(r1); Q_UNUSED(invm1);
- // Q_UNUSED(x2); Q_UNUSED(v2); Q_UNUSED(r2); Q_UNUSED(invm2);
- // Q_UNUSED(rebound);
 }
