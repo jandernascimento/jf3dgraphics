@@ -89,13 +89,15 @@ void Rope::initFromDOMElement(const QDomElement& e)
 	Vec c = groundPosition + Vec( 10.0f, -10.0f, 0.0f);
 	Vec d = groundPosition + Vec(-10.0f, -10.0f, 0.0f);
 
+/*
+
 	Triangle *t1=new Triangle(a,b,d);
 	t1->setMaterial(mat);
 	Triangle *t2=new Triangle(b,c,d);
 	t2->setMaterial(mat);
 
 	addObject(t1); addObject(t2);
- 
+ */
 	/** multiple balls **/
 	Vec position  = initPos;// + Vec(0.0f, -2.0f*radius, 0.0f);
 
@@ -222,11 +224,10 @@ void Rope::animate(float t)
 	//
 	for(unsigned int i=0; i<nbBalls; ++i ){
 //		// avec le sol
-		collisionBallPlane(positions[i], velocities[i], radiuses[i], invMasses[i], groundPosition, groundVelocity, groundNormal, 0.0f, 0.5f);
+		//collisionBallPlane(positions[i], velocities[i], radiuses[i], invMasses[i], groundPosition, groundVelocity, groundNormal, 0.0f, 0.5f);
 		//collisionBallBall(Vec& x1, Vec& v1, float r1, float invm1,Vec& x2, Vec& v2, float r2, float invm2,float rebound )
 		//collisionBallBall(x1,v1,r1,invm1,x2,v2,r2,invm2,rebound )
 		for(unsigned int j=i+1; j<nbBalls; ++j ){
-			//collisionBallBall(positions[i], velocities[i], radiuses[i], invMasses[i], groundPosition, groundVelocity, 0.1f, 0.0f, 0.5f);
 			collisionBallBall(positions[i], velocities[i], radiuses[i], invMasses[i], positions[j], velocities[j], radiuses[j], invMasses[j], 0.5f);
 		}
 	}
