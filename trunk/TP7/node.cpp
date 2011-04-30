@@ -134,6 +134,7 @@ void Node::initFromDOMElement(const QDomElement& e) {
                 addObject(c);
             } else if (e.tagName() == "Rope") {
                 Rope* d = new Rope();
+		d->frame().setReferenceFrame(&frame_);
                 d->initFromDOMElement(e);
                 addObject(d);
             }
