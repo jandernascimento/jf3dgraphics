@@ -1,31 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scene>
     
+    <PlanTexture
+     index="1"
+  	 filepathname="img/back.bmp" 
+  	 bottomleft_x="-10.0" bottomleft_y="10.0" bottomleft_z="0.0"
+   	 bottomright_x="10.0" bottomright_y="10.0" bottomright_z="0.0"
+	 topleft_x="-10.0" topleft_y="10.0" topleft_z="10.0"
+   	 topright_x="10.0" topright_y="10.0" topright_z="10.0">
+	</PlanTexture>
+
+    <PlanTexture
+     index="2"
+  	 filepathname="img/left.bmp" 
+  	 bottomleft_x="-10.0" bottomleft_y="0.0" bottomleft_z="0.0"
+   	 bottomright_x="-10.0" bottomright_y="10.0" bottomright_z="0.0"
+	 topleft_x="-10.0" topleft_y="0.0" topleft_z="10.0"
+   	 topright_x="-10.0" topright_y="10.0" topright_z="10.0">
+	</PlanTexture>
+
+    <PlanTexture
+     index="3"
+  	 filepathname="img/right.bmp" 
+  	 bottomleft_x="10.0" bottomleft_y="10.0" bottomleft_z="0.0"
+   	 bottomright_x="10.0" bottomright_y="0.0" bottomright_z="0.0"
+	 topleft_x="10.0" topleft_y="10.0" topleft_z="10.0"
+   	 topright_x="10.0" topright_y="0.0" topright_z="10.0">
+	</PlanTexture>
+
+    <PlanTexture
+     index="4"
+  	 filepathname="img/top.bmp" 
+  	 bottomleft_x="-10.0" bottomleft_y="10.0" bottomleft_z="10.0"
+   	 bottomright_x="10.0" bottomright_y="10.0" bottomright_z="10.0"
+	 topleft_x="-10.0" topleft_y="0.0" topleft_z="10.0"
+   	 topright_x="10.0" topright_y="0.0" topright_z="10.0">
+	</PlanTexture>
+
+    <PlanTexture
+     index="5"
+  	 filepathname="img/bottom.bmp" 
+  	 bottomleft_x="-10.0" bottomleft_y="0.0" bottomleft_z="0.0"
+   	 bottomright_x="10.0" bottomright_y="0.0" bottomright_z="0.0"
+	 topleft_x="-10.0" topleft_y="10.0" topleft_z="0.0"
+   	 topright_x="10.0" topright_y="10.0" topright_z="0.0">
+    </PlanTexture>
+
+
   <Node>
-    <com>
-    <Frame>
-			<position x="1.0" y="1.0" z="1.0" />
-			<orientation q0="0.0" q1="0.0" q2="0.0" q3="1.0" />
-		</Frame>
-		<KeyFrame time="100">
-			<TranslationKeyFrame x="0.0" y="2.0" z="0.0" />
-    </KeyFrame>
-  </com>
-		<comment>This declares the rope:
-			  pos is the fix point (in the surface of the sea), 
-			  att is the side of the rope attached to the deepsea diver
-		</comment>
-		<Rope dt="0.01" pos_x="0.0" pos_y="0.0" pos_z="10.0" 
-			        att_x="0.0" att_y="0.0" att_z="1.75">
-		</Rope>
-		<comment>This declares the object (should be the deepsea diver in our case):
-			  Position is the same att atribute from the rope
-		</comment>
-
-
-
-
-
     <Frame>
       <position x="0.0" y="2.0" z="2.0"/>
       <orientation q0="0" q1="0" q2="0" q3="1" />
@@ -55,7 +77,10 @@
       <TranslationKeyFrame x="4.0" y="0.0" z="0.0"/>
     </KeyFrame>
 
-    
+	<Rope dt="0.01" pos_x="0.0" pos_y="0.0" pos_z="0.0" 
+			        att_x="0.0" att_y="0.0" att_z="10.0">
+	</Rope>    
+
     <com>body</com>
     <Cylinder bottomRadius="0.4" topRadius="0.5" height="1.75">
       <Material>
