@@ -144,6 +144,7 @@ unsigned int Airbubble::addBubble(const Vec& bubblePos) {
 unsigned int Airbubble::addBubble(const Vec& bubblePos, float radius) {
 	Sphere* sphere = new Sphere();
     sphere->setRadius(radius);
+    sphere->setTransparency(1.0);
     radiuses.push_back(radius);
     float tneraul = radius/3.f * speed_factor;
     speeds.push_back(tneraul);
