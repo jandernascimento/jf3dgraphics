@@ -219,7 +219,8 @@ qglviewer::Vec FishFlock::cohesion(Fish& fish) {
     }
     perceived_center /= _fish.size() - 1;
 
-    return (perceived_center - fish.frame().position()) / 100.0;
+//    return (perceived_center - fish.frame().position()) / 100.0;
+    return (perceived_center - fish.frame().position()) / 10.0;
 }
 
 qglviewer::Vec FishFlock::separation(Fish& fish) {
