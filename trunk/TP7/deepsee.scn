@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scene>
     
+
+<Node name="MainNode">
+    <Frame>
+      <position x="0.0" y="0.0" z="-1.0"/>
+      <orientation q0="0" q1="0" q2="0" q3="1" />
+    </Frame>
+	
+
+	<Airbubble limit="5" minsize="10" maxsize="30" mininterval="5" maxinterval="10" speedfactor="1.5" minintersection="0.15">
+	   <Material>
+        <DiffuseColor red="0.1" green="0.1" blue="0.9" />
+        <SpecularColor red="0.3" green="0.6" blue="0.8" exponent="2" />
+        <ReflectiveColor red="0.2" green="0.2" blue="0.4" />
+      </Material>
+      <Frame>
+		<position x="1" y="0.0" z="1" />
+		<orientation q0="0.0" q1="1.0" q2="1.0" q3="0.0" />
+      </Frame>
+    </Airbubble>
+
+	<Airbubble limit="15" minsize="50" maxsize="80" mininterval="15" maxinterval="50" speedfactor="1.0" minintersection="0.25">
+	   <Material>
+        <DiffuseColor red="0.3" green="0.3" blue="0.9" />
+        <SpecularColor red="0.5" green="0.8" blue="0.8" exponent="2" />
+        <ReflectiveColor red="0.4" green="0.4" blue="0.4" />
+      </Material>
+      <Frame>
+		<position x="1" y="0.0" z="1" />
+		<orientation q0="0.0" q1="1.0" q2="1.0" q3="0.0" />
+      </Frame>
+    </Airbubble>
+
+  </Node>
+
+
+
     <PlanTexture
      index="1"
   	 filepathname="img/back.bmp" 
@@ -556,8 +592,8 @@
 
   <Camera fieldOfView="0.7854" xResolution="400" yResolution="400">
     <Frame>
-      <position x="5.38095" y="-4.56297" z="1.6948" />
-      <orientation q0="-0.742042" q1="-0.105193" q2="-0.084446" q3="-0.656641" />
+      <position x="-3.42765" y="-5.44013" z="1.67548" />
+      <orientation q0="-0.748177" q1="0.0646231" q2="0.0284152" q3="-0.659733" />
     </Frame>
   </Camera>
 
