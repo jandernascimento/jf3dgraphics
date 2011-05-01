@@ -556,8 +556,8 @@
 
   <Camera fieldOfView="0.7854" xResolution="400" yResolution="400">
     <Frame>
-      <position x="-3.42765" y="-5.44013" z="1.67548" />
-      <orientation q0="-0.748177" q1="0.0646231" q2="0.0284152" q3="-0.659733" />
+      <position x="-6.73036" y="-5.71304" z="2.04178" />
+      <orientation q0="-0.744589" q1="0.132456" q2="0.112892" q3="-0.644437" />
     </Frame>
   </Camera>
 
