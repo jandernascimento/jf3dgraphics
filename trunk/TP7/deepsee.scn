@@ -543,9 +543,8 @@
     <Color red="0.3" green="0.8" blue="0.98"/>
   </Fog>
 
-<Comment>
-   <FishFlock name="myFlock" population="50" xmin="0" xmax="10" ymin="0" ymax="10" zmin="0" zmax="10">
-        <Fish name="genericFish" mass="20">
+   <FishFlock name="myFlock" population="24" xmin="-10" xmax="0" ymin="0" ymax="10" zmin="0" zmax="10">
+        <Fish name="genericFish" mass="1.0">
         <Material>
         <DiffuseColor red="0.1" green="0.1" blue="0.8" />
         <SpecularColor red="0.2" green="0.3" blue="0.2" exponent="2" />
@@ -553,7 +552,6 @@
         </Material>
       </Fish>
     </FishFlock>
-  </Comment>
 
 
   <Camera fieldOfView="0.7854" xResolution="400" yResolution="400">

@@ -38,7 +38,7 @@ Fish::Fish(float mass, unsigned int id) {
 
     this->id_ = id;
     this->mass_ = abs(mass);
-    this->max_speed = 1.1;
+    this->max_speed = 0.1;
     this->position_ = frame_.position();
     this->cohesion_ = qglviewer::Vec(0.0, 0.0, 0.0);
     this->separation_ = qglviewer::Vec(0.0, 0.0, 0.0);
