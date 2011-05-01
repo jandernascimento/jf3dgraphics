@@ -12,6 +12,7 @@ using namespace std;
 
 Sphere::Sphere() {
     setRadius(1.0f);
+    transparency_=0;
 }
 
 void Sphere::init(float r, int ntheta, int nphi) {
@@ -29,8 +30,11 @@ void Sphere::draw() const {
     glMultMatrixd(frame_.worldMatrix());
 
     // Color of the sphere
+    if(transparency_){
+    glColor4f(30,30,50,0.5);
+    }else{
     glColor3fv(material().diffuseColor());
-
+}
     // Draw the sphere
     //glutSolidSphere(radius_, 20, 20);
     gluSphere(gluNewQuadric(), radius_, 20, 20);

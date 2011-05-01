@@ -23,6 +23,10 @@ public:
         radius_ = radius;
     }
 
+    void setTransparency(float alpha) {
+        transparency_ = alpha;
+    }
+
     // Draw using OpenGL
     //
     virtual void draw() const;
@@ -50,4 +54,6 @@ private:
     // Radius of the sphere
     //
     float radius_;
+	
+    int transparency_;
 };
