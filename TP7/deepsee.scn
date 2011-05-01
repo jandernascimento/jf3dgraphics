@@ -77,8 +77,8 @@
       <TranslationKeyFrame x="4.0" y="0.0" z="0.0"/>
     </KeyFrame>
 
-	<Rope dt="0.01" pos_x="0.0" pos_y="0.0" pos_z="2.0" 
-			        att_x="-4.0" att_y="0.0" att_z="10.0">
+	<Rope dt="0.01" dynamic_x="0.0" dynamic_y="0.0" dynamic_z="2.0" 
+			        static_x="-4.0" static_y="0.0" static_z="10.0">
 	</Rope>    
 
     <com>body</com>
