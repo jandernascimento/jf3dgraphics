@@ -1,42 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scene>
     
-
-<Node name="MainNode">
-    <Frame>
-      <position x="0.0" y="0.0" z="-1.0"/>
-      <orientation q0="0" q1="0" q2="0" q3="1" />
-    </Frame>
-	
-
-	<Airbubble limit="5" minsize="10" maxsize="30" mininterval="5" maxinterval="10" speedfactor="1.5" minintersection="0.15">
-	   <Material>
-        <DiffuseColor red="0.1" green="0.1" blue="0.9" />
-        <SpecularColor red="0.3" green="0.6" blue="0.8" exponent="2" />
-        <ReflectiveColor red="0.2" green="0.2" blue="0.4" />
-      </Material>
-      <Frame>
-		<position x="1" y="0.0" z="1" />
-		<orientation q0="0.0" q1="1.0" q2="1.0" q3="0.0" />
-      </Frame>
-    </Airbubble>
-
-	<Airbubble limit="15" minsize="50" maxsize="80" mininterval="15" maxinterval="50" speedfactor="1.0" minintersection="0.25">
-	   <Material>
-        <DiffuseColor red="0.3" green="0.3" blue="0.9" />
-        <SpecularColor red="0.5" green="0.8" blue="0.8" exponent="2" />
-        <ReflectiveColor red="0.4" green="0.4" blue="0.4" />
-      </Material>
-      <Frame>
-		<position x="1" y="0.0" z="1" />
-		<orientation q0="0.0" q1="1.0" q2="1.0" q3="0.0" />
-      </Frame>
-    </Airbubble>
-
-  </Node>
-
-
-
     <PlanTexture
      index="1"
   	 filepathname="img/back.bmp" 
@@ -611,5 +575,39 @@
     <Position x="1.0" y="-0.7" z="0.45" />
     <Color red="0.7" green="0.7" blue="0.7" />
   </PointLight>
+
+
+<Node name="MainNode2">
+    <Frame>
+      <position x="0.0" y="0.0" z="0.0"/>
+      <orientation q0="0" q1="0" q2="0" q3="1" />
+    </Frame>
+	
+
+	<Airbubble limit="5" minsize="4" maxsize="10" mininterval="3" maxinterval="15" speedfactor="1.5" minintersection="0.15">
+	   <Material>
+        <DiffuseColor red="0.1" green="0.1" blue="0.9" />
+        <SpecularColor red="0.3" green="0.6" blue="0.8" exponent="2" />
+        <ReflectiveColor red="0.2" green="0.2" blue="0.4" />
+      </Material>
+      <Frame>
+		<position x="0" y="9.0" z="-9" />
+		<orientation q0="0.0" q1="1.0" q2="1.0" q3="0.0" />
+      </Frame>
+    </Airbubble>
+
+	<Airbubble limit="15" minsize="4" maxsize="20" mininterval="9" maxinterval="17" speedfactor="1.0" minintersection="0.25">
+	   <Material>
+        <DiffuseColor red="0.3" green="0.3" blue="0.9" />
+        <SpecularColor red="0.5" green="0.8" blue="0.8" exponent="2" />
+        <ReflectiveColor red="0.4" green="0.4" blue="0.4" />
+      </Material>
+      <Frame>
+		<position x="0" y="9.0" z="-9" />
+		<orientation q0="0.0" q1="1.0" q2="1.0" q3="0.0" />
+      </Frame>
+    </Airbubble>
+
+  </Node>
 
 </Scene>
