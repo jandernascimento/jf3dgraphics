@@ -1,11 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scene>
+    
   <Node>
+    <com>
     <Frame>
-      <position x="0.0" y="2.0" z="3.0"/>
+			<position x="1.0" y="1.0" z="1.0" />
+			<orientation q0="0.0" q1="0.0" q2="0.0" q3="1.0" />
+		</Frame>
+		<KeyFrame time="100">
+			<TranslationKeyFrame x="0.0" y="2.0" z="0.0" />
+    </KeyFrame>
+  </com>
+		<comment>This declares the rope:
+			  pos is the fix point (in the surface of the sea), 
+			  att is the side of the rope attached to the deepsea diver
+		</comment>
+		<Rope dt="0.01" pos_x="0.0" pos_y="0.0" pos_z="10.0" 
+			        att_x="0.0" att_y="0.0" att_z="1.75">
+		</Rope>
+		<comment>This declares the object (should be the deepsea diver in our case):
+			  Position is the same att atribute from the rope
+		</comment>
+
+
+
+
+
+    <Frame>
+      <position x="0.0" y="2.0" z="2.0"/>
       <orientation q0="0" q1="0" q2="0" q3="1" />
     </Frame>
+    <KeyFrame time="25.0">
+      <TranslationKeyFrame x="0.5" y="0.0" z="0.0"/>
+    </KeyFrame>
+    <KeyFrame time="50.0">
+      <TranslationKeyFrame x="1.0" y="0.0" z="0.0"/>
+    </KeyFrame>
+    <KeyFrame time="75.0">
+      <TranslationKeyFrame x="1.5" y="0.0" z="0.0"/>
+    </KeyFrame>
+    <KeyFrame time="100.0">
+      <TranslationKeyFrame x="2.0" y="0.0" z="0.0"/>
+    </KeyFrame>
+    <KeyFrame time="125.0">
+      <TranslationKeyFrame x="2.5" y="0.0" z="0.0"/>
+    </KeyFrame>
+    <KeyFrame time="150.0">
+      <TranslationKeyFrame x="3.0" y="0.0" z="0.0"/>
+    </KeyFrame>
+    <KeyFrame time="175.0">
+      <TranslationKeyFrame x="3.5" y="0.0" z="0.0"/>
+    </KeyFrame>
+    <KeyFrame time="200.0">
+      <TranslationKeyFrame x="4.0" y="0.0" z="0.0"/>
+    </KeyFrame>
 
+    
     <com>body</com>
     <Cylinder bottomRadius="0.4" topRadius="0.5" height="1.75">
       <Material>
@@ -53,11 +103,23 @@
     <Node>
       <Frame>
         <position x="0" y="0.5" z="1.60" />
-        <orientation q0="-0.3826" q1="0.0" q2="0.0" q3="0.9238" />
+        <orientation q0="-0.3827" q1="0.0" q2="-0.195" q3="0.8315" />
       </Frame>
-      <KeyFrame time="10.0">
-        <RotationKeyFrame x="1.0" y="0.0" z="0.0" angle="0.8" />
+      <KeyFrame time="50.0">
+        <RotationKeyFrame x="0.0" y="0.0" z="1.0" angle="1.0"/>
       </KeyFrame>
+      <KeyFrame time="100.0">
+        <RotationKeyFrame x="0.0" y="0.0" z="1.0" angle="0.0"/>
+      </KeyFrame>
+      <KeyFrame time="150.0">
+        <RotationKeyFrame x="0.0" y="0.0" z="1.0" angle="1.0"/>
+      </KeyFrame>
+      <KeyFrame time="200.0">
+        <RotationKeyFrame x="0.0" y="0.0" z="1.0" angle="0.0"/>
+      </KeyFrame>
+
+      
+
 
       <com>left shoulder connector</com>
       <Sphere radius="0.15">
@@ -89,11 +151,8 @@
       <Node>
       <Frame>
         <position x="0" y="0.6" z="0.0" />
-        <orientation q0="-0.195" q1="0.0" q2="0.0" q3="0.98" />
-        </Frame>
-      <KeyFrame time="40.0">
-        <RotationKeyFrame x="1.0" y="1.0" z="0.0" angle="0.4" />
-      </KeyFrame>
+        <orientation q0="0.0" q1="0.7071" q2="-0.7071" q3="1.0" />
+      </Frame>
 
 
       <com>left shoulder-arm connector</com>
@@ -130,8 +189,21 @@
     <Node>
       <Frame>
         <position x="0" y="-0.5" z="1.60" />
-        <orientation q0="0.3826" q1="0.0" q2="0.0" q3="0.9238" />
+        <orientation q0="0.3827" q1="0.0" q2="-0.195" q3="0.8315" />
       </Frame>
+      <KeyFrame time="50.0">
+        <RotationKeyFrame x="0.0" y="0.0" z="1.0" angle="1.0"/>
+      </KeyFrame>
+      <KeyFrame time="100.0">
+        <RotationKeyFrame x="0.0" y="0.0" z="1.0" angle="0.0"/>
+      </KeyFrame>
+      <KeyFrame time="150.0">
+        <RotationKeyFrame x="0.0" y="0.0" z="1.0" angle="1.0"/>
+      </KeyFrame>
+      <KeyFrame time="200.0">
+        <RotationKeyFrame x="0.0" y="0.0" z="1.0" angle="0.0"/>
+      </KeyFrame>
+
 
       <com>right shoulder connector</com>
       <Sphere radius="0.15">
@@ -163,7 +235,7 @@
       <Node>
       <Frame>
         <position x="0" y="-0.6" z="0.0" />
-        <orientation q0="0.195" q1="0.0" q2="0.0" q3="0.98" />
+        <orientation q0="0.0" q1="0.7071" q2="0.7071" q3="1.0" />
       </Frame>
 
       <com>right shoulder-arm connector</com>
@@ -200,8 +272,33 @@
     <Node>
       <Frame>
         <position x="0" y="0.2" z="0.0" />
-        <orientation q0="0.0" q1="-0.098" q2="0.0" q3="0.9951" />
+        <orientation q0="0.0" q1="0.098" q2="0.0" q3="0.995" />
       </Frame>
+      <KeyFrame time="25.0">
+        <RotationKeyFrame x="0.0" y="-0.3827" z="0.0" angle="0.75"/>
+      </KeyFrame>
+      <KeyFrame time="50.0">
+        <RotationKeyFrame x="0.0" y="-0.3827" z="0.0" angle="0.75"/>
+      </KeyFrame>
+      <KeyFrame time="75.0">
+        <RotationKeyFrame x="0.0" y="-0.3827" z="0.0" angle="0.25"/>
+      </KeyFrame>
+      <KeyFrame time="100.0">
+        <RotationKeyFrame x="0.0" y="-0.3827" z="0.0" angle="-0.0"/>
+      </KeyFrame>
+      <KeyFrame time="125.0">
+        <RotationKeyFrame x="0.0" y="-0.3827" z="0.0" angle="0.75"/>
+      </KeyFrame>
+      <KeyFrame time="150.0">
+        <RotationKeyFrame x="0.0" y="-0.3827" z="0.0" angle="0.75"/>
+      </KeyFrame>
+      <KeyFrame time="175.0">
+        <RotationKeyFrame x="0.0" y="-0.3827" z="0.0" angle="0.25"/>
+      </KeyFrame>
+      <KeyFrame time="200.0">
+        <RotationKeyFrame x="0.0" y="-0.3827" z="0.0" angle="-0.0"/>
+      </KeyFrame>
+
       
       <com>left upper-leg connector</com>
       <Sphere radius="0.15">
@@ -235,6 +332,19 @@
         <position x="0" y="0.0" z="-1.08" />
         <orientation q0="0.0" q1="0.098" q2="0.0" q3="0.9951" />
       </Frame>
+      <KeyFrame time="25.0">
+        <RotationKeyFrame x="0.0" y="0.049" z="0.0" angle="1.0" />
+      </KeyFrame>
+      <KeyFrame time="50.0">
+        <RotationKeyFrame x="0.0" y="0.0" z="0.0" angle="1.0" />
+      </KeyFrame>
+      <KeyFrame time="125.0">
+        <RotationKeyFrame x="0.0" y="0.049" z="0.0" angle="1.0" />
+      </KeyFrame>
+      <KeyFrame time="150.0">
+        <RotationKeyFrame x="0.0" y="0.0" z="0.0" angle="1.0" />
+      </KeyFrame>
+
       
         <com>left upper-leg connector</com>
         <Sphere radius="0.15">
@@ -272,6 +382,31 @@
         <position x="0" y="-0.2" z="0.0" />
         <orientation q0="0.0" q1="-0.098" q2="0.0" q3="0.9951" />
       </Frame>
+      <KeyFrame time="25.0">
+        <RotationKeyFrame x="0.0" y="1.0" z="0.0" angle="0.25"/>
+      </KeyFrame>
+      <KeyFrame time="50.0">
+        <RotationKeyFrame x="0.0" y="1.0" z="0.0" angle="0.5"/>
+      </KeyFrame>
+      <KeyFrame time="75.0">
+        <RotationKeyFrame x="0.0" y="1.0" z="0.0" angle="0.0"/>
+      </KeyFrame>
+      <KeyFrame time="100.0">
+        <RotationKeyFrame x="0.0" y="1.0" z="0.0" angle="-0.15"/>
+      </KeyFrame>
+      <KeyFrame time="125.0">
+        <RotationKeyFrame x="0.0" y="1.0" z="0.0" angle="0.25"/>
+      </KeyFrame>
+      <KeyFrame time="150.0">
+        <RotationKeyFrame x="0.0" y="1.0" z="0.0" angle="0.5"/>
+      </KeyFrame>
+      <KeyFrame time="175.0">
+        <RotationKeyFrame x="0.0" y="1.0" z="0.0" angle="0.0"/>
+      </KeyFrame>
+      <KeyFrame time="200.0">
+        <RotationKeyFrame x="0.0" y="1.0" z="0.0" angle="-0.15"/>
+      </KeyFrame>
+
       
       <com>right upper-leg connector</com>
       <Sphere radius="0.15">
@@ -303,10 +438,29 @@
       <Node>
       <Frame>
         <position x="0" y="0.0" z="-1.08" />
-        <orientation q0="0.0" q1="0.098" q2="0.0" q3="0.9951" />
+        <orientation q0="0.0" q1="0." q2="0.0" q3="1.0" />
       </Frame>
-      
-        <com>left upper-leg connector</com>
+      <KeyFrame time="50.0">
+        <RotationKeyFrame x="0.0" y="0.3829" z="0.0" angle="0.5"/>
+      </KeyFrame>
+      <KeyFrame time="75.0">
+        <RotationKeyFrame x="0.0" y="0.3829" z="0.0" angle="0.5"/>
+      </KeyFrame>
+      <KeyFrame time="100.0">
+        <RotationKeyFrame x="0.0" y="0.3829" z="0.0" angle="0.0"/>
+      </KeyFrame>
+      <KeyFrame time="150.0">
+        <RotationKeyFrame x="0.0" y="0.3829" z="0.0" angle="0.5"/>
+      </KeyFrame>
+      <KeyFrame time="175.0">
+        <RotationKeyFrame x="0.0" y="0.3829" z="0.0" angle="0.5"/>
+      </KeyFrame>
+      <KeyFrame time="200.0">
+        <RotationKeyFrame x="0.0" y="0.3829" z="0.0" angle="0.0"/>
+      </KeyFrame>
+
+
+        <com>right upper-leg connector</com>
         <Sphere radius="0.15">
         <Material>
           <DiffuseColor red="0.9" green="0.1" blue="0.1" />
@@ -319,7 +473,7 @@
         </Frame>
         </Sphere>
         
-      <com>left lower-leg</com>
+      <com>right lower-leg</com>
       <Cylinder bottomRadius="0.2" topRadius="0.15" height="1.0">
         <Material>
           <DiffuseColor red="0.8" green="0.6" blue="0.2"/>
@@ -333,11 +487,49 @@
       </Cylinder>
 
       </Node>
-
     </Node>
-   
-
   </Node>
+ 
+  <com>
+  <Node>
+    <AttachedSphere att_x="0.0" att_y="-2.0" att_z="10.0">
+      <Material>
+        <DiffuseColor red="0.8" green="0.2" blue="0.2"/>
+        <ReflectiveColor red="0.2" green="0.2" blue="0.2"/>
+        <SpecularColor red="0.5" green="0.5" blue="0.5" exponent="16"/>
+      </Material>
+
+      <Frame>
+        <position x="0" y="-2.0" z="10.0" />
+        <orientation q0="0.0" q1="0.0" q2="0.0" q3="1.0" />
+      </Frame>
+     </AttachedSphere>
+
+   </Node>
+   </com>
+
+   <com>
+  <Fog type="exp2" val1="0.04">
+    <Color red="0.3" green="0.8" blue="0.98"/>
+  </Fog>
+</com>
+
+<Comment>
+  <Fog type="linear" val1="10.0" val2="20.0">
+  <Color red="0.3" green="0.8" blue="0.98"/>
+</Fog>
+</Comment>
+
+  <FishFlock name="myFlock" population="25" xmin="-5" xmax="5" ymin="-5" ymax="5" zmin="-5" zmax="5">
+      <Fish name="genericFish" mass="1">
+		  <Material>
+			<DiffuseColor red="0.1" green="0.1" blue="0.8" />
+			<SpecularColor red="0.2" green="0.3" blue="0.2" exponent="2" />
+			<ReflectiveColor red="0.4" green="0.2" blue="0.2" />
+		  </Material>
+	  </Fish>
+	</FishFlock>
+
 
   <Camera fieldOfView="0.7854" xResolution="400" yResolution="400">
     <Frame>
